@@ -38,7 +38,7 @@ html{
     animation: myAnimation 16s linear infinite;
     font-family:"MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus", Sans-serif;
     color:var(--text);
-    cursor: url(images/cat.png), auto;
+    cursor: url(images/cursor-defaultpng.png), auto;
 }
 
 body{
@@ -56,6 +56,7 @@ body{
     padding: 20px;
     height: 900px;
     filter: drop-shadow(0 0 15px #000000e0);
+    transition: 0.5s;
 }
 
 .myflex{
@@ -168,4 +169,13 @@ body{
     overflow: auto;
     padding: 40px 80px;
     max-height: 100%;
+    scrollbar-color: var(--color2dark) var(--color9);
+    scrollbar-width: thin;
+}
+
+@media only screen and (max-width: 600px) {
+    .center{
+        padding: 10px;
+        height: 100%;
+    }
 }
