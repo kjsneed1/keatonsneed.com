@@ -115,6 +115,7 @@ body{
     transition: 0.25s;
     background-color: var(--backgroundHover);
     filter: drop-shadow(0 0 3px var(--border));
+    cursor: url("images/cursor-defaultpng.png"), pointer;
 }
 .nav a:hover img{
     width: 22px;
