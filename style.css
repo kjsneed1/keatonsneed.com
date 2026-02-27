@@ -1,57 +1,77 @@
-:root
-{
-    --background:#262B40;
-    --backgroundClear:#262B4060;
-    --color1dark:#67A171;
-    --color1light:#7db88e;
-    --color2dark:#50ACAD;
-    --color2light:#79C7C5;
-    --text:#b1b1b1;
+:root {
+    --background: #262B40;
+    --backgroundClear: #262B4060;
+    --color1dark: #67A171;
+    --color1light: #7db88e;
+    --color2dark: #50ACAD;
+    --color2light: #79C7C5;
+    --text: #b1b1b1;
     --backgroundHover: #454c66;
-    --color9:#2e334b;
-    --border:#6b7292;
+    --color9: #2e334b;
+    --border: #6b7292;
 
 }
 
 @font-face {
-  font-family: myHeader;
-  src: url(fonts/Kids\ Magazine.ttf);
+    font-family: myHeader;
+    src: url(fonts/Kids\ Magazine.ttf);
 }
 
 @keyframes myAnimation {
-  from {background-position: 0px 0px;}
-  to {background-position: 240px 240px;}
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: 240px 240px;
+    }
 }
 
 @keyframes hoverLink {
-    0% {margin-left: 0px;}
-    50% {margin-left: 5px;}
-    100% {margin-left: 0px;}
+    0% {
+        margin-left: 0px;
+    }
+
+    50% {
+        margin-left: 5px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
 }
 
-@keyframes navClose{
-    0%{position: relative;}
+@keyframes navClose {
+    from {
+        position: relative;
+    }
+
+    to {
+        height: calc(100vh - 62px);
+        position: absolute;
+    }
+
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     background-image: url("images/BackImage.png");
     animation: myAnimation 16s linear infinite;
-    font-family:"MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus", Sans-serif;
-    color:var(--text);
+    font-family: "MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus", Sans-serif;
+    color: var(--text);
     cursor: url(images/cursor-default.png), auto;
 }
 
-body{
+body {
     height: 100vh;
-    margin:0px;
+    margin: 0px;
     align-content: center;
 }
 
-.center{
+.center {
     max-width: 1400px;
     margin: auto;
     max-height: 100%;
@@ -63,27 +83,28 @@ body{
     transition: 0.5s;
 }
 
-.myflex{
+.myflex {
     display: flex;
-    flex:auto;
+    flex: auto;
     height: 200px;
 }
 
 
 /*Navigation*/
 
-.nav{
+.nav {
     border: solid 1px var(--border);
     background-color: var(--color9);
     width: 160px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     flex: none;
     height: 100%;
     transition: 0.5s;
 }
 
-.nav a{
-    display:block;
+.nav a {
+    display: block;
     color: var(--text);
     text-decoration: none;
     border: none;
@@ -94,52 +115,75 @@ body{
     padding: 5px;
     margin: 5px;
     user-select: none;
+    width: 148px;
 }
 
-.nav a div{
+.nav a div {
     display: inline-block;
     align-content: center;
-    height:100%;
+    height: 100%;
     padding: 0;
     vertical-align: super;
 }
-.nav a img{
-    width:16px;
+
+.nav a img {
+    width: 16px;
     margin-right: 8px;
-    vertical-align:top;
+    vertical-align: top;
     transition: 0.2s;
 }
 
-.nav a div p{
+.nav a div p {
     margin: 0;
-    margin-top:-5 ;
+    margin-top: -5;
 }
 
-.nav a:hover{
+.nav a:hover {
     border: solid 1px var(--border);
     transition: 0.25s;
     background-color: var(--backgroundHover);
     filter: drop-shadow(0 0 3px var(--border));
     cursor: url("images/cursor-default.png"), pointer;
 }
-.nav a:hover img{
+
+.nav a:hover img {
     width: 22px;
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0); 
+    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
 }
-.nav a:hover div{
+
+.nav a:hover div {
     animation: hoverLink 1.2s infinite;
     text-shadow: 1px 3px 1.5px #0c0c0cc0;
 }
-.nav a:active{
-    filter:none;
+
+.nav a:active {
+    filter: none;
     border: 1px solid transparent;
 }
 
-.welcome
-{
-    background-image: linear-gradient(to right, var(--color1dark),var(--color2dark));
+.navContainer {
+    position: relative;
+    z-index: 2;
+}
+
+.navToggleButton {
+    position: absolute;
+    left: 100%;
+    top:20px;
+    width: 16px;
+    height: 40px;
+    z-index: 2;
+    border: 1px solid var(--border);
+    border-left: none;
+    background-color: var(--color9);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.welcome {
+    background-image: linear-gradient(to right, var(--color1dark), var(--color2dark));
     height: 32px;
-    color:white;
+    color: white;
     border: solid 1px var(--cborder);
     border-bottom: none;
     border-top-left-radius: 10px;
@@ -149,17 +193,17 @@ body{
     align-content: center;
 }
 
-.welcome h1{
+.welcome h1 {
     font-size: 16pt;
     margin: 0;
-    font-weight:lighter;
+    font-weight: lighter;
     user-select: none;
     text-shadow: 1px 3px 1.5px #272727a0;
 }
 
-.foot{
+.foot {
     height: 10px;
-    background-image: linear-gradient(to right, var(--color1dark),var(--color2dark));
+    background-image: linear-gradient(to right, var(--color1dark), var(--color2dark));
     border: solid 1px var(--border);
     border-top: none;
     border-bottom-left-radius: 10px;
@@ -167,30 +211,38 @@ body{
     flex: none;
 }
 
-.content{
+.content {
     width: 100%;
     background-color: var(--backgroundClear);
     border: solid 1px var(--border);
     border-left: none;
     overflow: auto;
-    padding: 40px 80px;
+    padding: 40px 60px;
     max-height: 100%;
     scrollbar-color: var(--color2dark) var(--color9);
     scrollbar-width: thin;
+    z-index: 1;
 }
 
-::-webkit-scrollbar:hover{
+::-webkit-scrollbar:hover {
     width: 100px;
 }
-@media only screen and (max-width: 600px) {
-    .center{
+
+@media only screen and (max-width: 768px) {
+    .center {
         padding: 10px;
         height: 100%;
     }
 
-    .nav{
-        /*height: calc(100vh - 62px);*/
-        width: 0;
+    .nav {
+        width: 0px;
         border-right: none;
+        z-index: 2;
+    }
+
+    .navContainer {
+        animation: navClose 0s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
     }
 }
