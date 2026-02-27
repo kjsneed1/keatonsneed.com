@@ -29,6 +29,10 @@
     100% {margin-left: 0px;}
 }
 
+@keyframes navClose{
+    0%{position: relative;}
+}
+
 *{
     box-sizing: border-box;
 }
@@ -38,7 +42,7 @@ html{
     animation: myAnimation 16s linear infinite;
     font-family:"MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus", Sans-serif;
     color:var(--text);
-    cursor: url(images/cursor-defaultpng.png), auto;
+    cursor: url(images/cursor-default.png), auto;
 }
 
 body{
@@ -75,6 +79,7 @@ body{
     overflow: auto;
     flex: none;
     height: 100%;
+    transition: 0.5s;
 }
 
 .nav a{
@@ -115,7 +120,7 @@ body{
     transition: 0.25s;
     background-color: var(--backgroundHover);
     filter: drop-shadow(0 0 3px var(--border));
-    cursor: url("images/cursor-defaultpng.png"), pointer;
+    cursor: url("images/cursor-default.png"), pointer;
 }
 .nav a:hover img{
     width: 22px;
@@ -166,7 +171,7 @@ body{
     width: 100%;
     background-color: var(--backgroundClear);
     border: solid 1px var(--border);
-    border-left: none; 
+    border-left: none;
     overflow: auto;
     padding: 40px 80px;
     max-height: 100%;
@@ -174,9 +179,18 @@ body{
     scrollbar-width: thin;
 }
 
+::-webkit-scrollbar:hover{
+    width: 100px;
+}
 @media only screen and (max-width: 600px) {
     .center{
         padding: 10px;
         height: 100%;
+    }
+
+    .nav{
+        /*height: calc(100vh - 62px);*/
+        width: 0;
+        border-right: none;
     }
 }
