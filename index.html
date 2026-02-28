@@ -35,6 +35,12 @@
             }
         }
     }
+
+    const clickOffNav = function(){
+        if(navOpen){
+            navToggle();
+        }
+    }
 </script>
 
 <html lang="en">
@@ -51,7 +57,7 @@
         </div>
         <div class="myflex">
             <div class="navContainer">
-                <button class="navToggleButton" onclick="navToggle()"></button>
+                <button class="navToggleButton" onclick="navToggle()"><img src="icons/menu-burger.svg"/></button>
                 <div class="nav">
                     <a href="index.html"><img src="icons/home.svg" />
                         <div>
@@ -69,7 +75,7 @@
                     </a>
                 </div>
             </div>
-            <div class="content">
+            <div class="content" onclick="clickOffNav()">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
                 sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
                 Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia

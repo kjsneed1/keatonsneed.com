@@ -1,15 +1,14 @@
 :root {
-    --background: #262B40;
-    --backgroundClear: #262B4060;
-    --color1dark: #67A171;
+    --background: #262b40;
+    --backgroundClear: #262b4060;
+    --color1dark: #67a171;
     --color1light: #7db88e;
-    --color2dark: #50ACAD;
-    --color2light: #79C7C5;
+    --color2dark: #50acad;
+    --color2light: #79c7c5;
     --text: #b1b1b1;
     --backgroundHover: #454c66;
     --color9: #2e334b;
     --border: #6b7292;
-
 }
 
 @font-face {
@@ -41,18 +40,6 @@
     }
 }
 
-@keyframes navClose {
-    from {
-        position: relative;
-    }
-
-    to {
-        height: calc(100vh - 62px);
-        position: absolute;
-    }
-
-}
-
 * {
     box-sizing: border-box;
 }
@@ -60,7 +47,9 @@
 html {
     background-image: url("images/BackImage.png");
     animation: myAnimation 16s linear infinite;
-    font-family: "MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus", Sans-serif;
+    font-family:
+        "MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
+        Sans-serif;
     color: var(--text);
     cursor: url(images/cursor-default.png), auto;
 }
@@ -88,7 +77,6 @@ body {
     flex: auto;
     height: 200px;
 }
-
 
 /*Navigation*/
 
@@ -169,22 +157,43 @@ body {
 .navToggleButton {
     position: absolute;
     left: 100%;
-    top:20px;
-    width: 16px;
+    width: 40px;
     height: 40px;
+    top:1px;
     z-index: 2;
     border: 1px solid var(--border);
+    border-top: none;
     border-left: none;
-    background-color: var(--color9);
-    border-top-right-radius: 10px;
+    background-color: var(--background);
     border-bottom-right-radius: 10px;
+    display: none;
+    transition: 0.2s;
+}
+
+.navToggleButton img {
+    width: 16px;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.navToggleButton:hover {
+    background-color: var(--backgroundHover);
+    filter: drop-shadow(0 0 3px var(--border));
+}
+
+.navToggleButton:hover img {
+    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
 }
 
 .welcome {
-    background-image: linear-gradient(to right, var(--color1dark), var(--color2dark));
+    background-image: linear-gradient(
+        to right,
+        var(--color1dark),
+        var(--color2dark)
+    );
     height: 32px;
     color: white;
-    border: solid 1px var(--cborder);
+    border: solid 1px var(--border);
     border-bottom: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -203,7 +212,11 @@ body {
 
 .foot {
     height: 10px;
-    background-image: linear-gradient(to right, var(--color1dark), var(--color2dark));
+    background-image: linear-gradient(
+        to right,
+        var(--color1dark),
+        var(--color2dark)
+    );
     border: solid 1px var(--border);
     border-top: none;
     border-bottom-left-radius: 10px;
@@ -222,6 +235,7 @@ body {
     scrollbar-color: var(--color2dark) var(--color9);
     scrollbar-width: thin;
     z-index: 1;
+    transition: 0.5s;
 }
 
 ::-webkit-scrollbar:hover {
@@ -230,7 +244,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     .center {
-        padding: 10px;
+        padding: 5px;
         height: 100%;
     }
 
@@ -241,8 +255,15 @@ body {
     }
 
     .navContainer {
-        animation: navClose 0s;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
+        height: calc(100vh - 52px);
+        position: absolute;
+    }
+
+    .navToggleButton {
+        display: inline;
+    }
+
+    .content {
+        padding: 40px 30px;
     }
 }
