@@ -38,7 +38,7 @@ const clickOffNav = function () {
 
 void (async function () {
     var layout = document.createElement("html");
-    layout.innerHTML = await (await fetch("layout/layout.html")).text();
+    layout.innerHTML = await (await fetch("/layout/layout.html")).text();
     document.body.appendChild(layout);
 
     document.getElementById("pageTitle").text = pageTitle;
