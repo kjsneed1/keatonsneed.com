@@ -1,0 +1,42 @@
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+<head>
+    <title id="pageTitle">{pageTitle}</title>
+</head>
+
+<body>
+    <div class="center">
+        <div class="welcome">
+            <h1 id="headerTitle">{headerTitle}</h1>
+        </div>
+        <div class="myflex">
+            <div class="navContainer">
+                <button class="navToggleButton" onclick="navToggle()">
+                    <img src="icons/menu-burger.svg" />
+                </button>
+                <div class="nav">
+                    <a href="index.html"
+                        ><img src="icons/home.svg" />
+                        <div>
+                            <p>Home</p>
+                        </div>
+                    </a>
+                    <a href="about.html"
+                        ><img src="icons/about.svg" />
+                        <div>About</div>
+                    </a>
+                    <a href="contact.html"
+                        ><img src="icons/loupe.svg" />
+                        <div>Find Me</div>
+                    </a>
+                    <a href="history.html"
+                        ><img src="icons/atomic.svg" />
+                        <div>Misc.</div>
+                    </a>
+                </div>
+            </div>
+            <div class="content" onclick="clickOffNav()"></div>
+        </div>
+        <div class="foot"></div>
+    </div>
+</body>
