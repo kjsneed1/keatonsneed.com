@@ -5,12 +5,49 @@
 <link rel="stylesheet" href="./layout/layout.css" />
 
 <script>
-    const pageTitle = "Home"
+    const pageTitle = "Home";
 </script>
 
 <template id="contentTemp">
     <h1>Welcome to my website!</h1>
-    <p>This site is intended to serve as a digital portfolio, art project, and hobby for me. I hope you enjoy looking around!</p>
+    <p>
+        This site is intended to serve as a digital portfolio, art project, and
+        hobby for me. Basically, a way to show off things that I make and do,
+        while still having it feel like my own little corner of the internet. I
+        hope you enjoy looking around!
+    </p>
+
+    <a class="bigLink" href="/about/">
+        <div class="bigLinkTop">About</div>
+        <div class="bigLinkBottom">
+            <div class="bigLinkImage">
+                <img src="icons/about.svg" />
+            </div>
+            <div class="bigLinkContent">
+                Who am I?
+            </div>
+        </div> </a
+    ><a class="bigLink alt" href="/findMe/">
+        <div class="bigLinkTop">Find Me</div>
+        <div class="bigLinkBottom">
+            <div class="bigLinkImage">
+                <img src="icons/loupe.svg" />
+            </div>
+            <div class="bigLinkContent">
+                Links to my socials and contact points.
+            </div>
+        </div> </a
+    ><a class="bigLink" href="/history/">
+        <div class="bigLinkTop">Work History</div>
+        <div class="bigLinkBottom">
+            <div class="bigLinkImage">
+                <img src="icons/id-card.svg" />
+            </div>
+            <div class="bigLinkContent">
+                A look back at my work experience.
+            </div>
+        </div>
+    </a>
 </template>
 
 <script src="./layout/layout.js"></script>

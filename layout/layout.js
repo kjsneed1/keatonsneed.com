@@ -1,4 +1,4 @@
-let isWide = window.matchMedia("(min-width: 600px)");
+let isWide = window.matchMedia("(min-width: 769px)");
 
 isWide.addEventListener("change", function () {
     navWidthCheck(isWide);
