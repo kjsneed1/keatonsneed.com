@@ -35,6 +35,15 @@
     }
 }
 
+@keyframes navClose {
+    from {
+        position: relative;
+    }
+    to {
+        position: absolute;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -83,7 +92,7 @@ body {
     overflow-y: auto;
     flex: none;
     height: 100%;
-    transition: 0.5s;
+    transition: width 0.5s, height 0s;
 }
 
 .nav a {
@@ -349,12 +358,14 @@ body {
         width: 0px;
         border-right: none;
         z-index: 2;
+        height: calc(100vh - 52px);
+        transition-delay: 0s, 0.5s;
     }
 
     .navContainer {
-        height: calc(100vh - 52px);
-        position: absolute;
         filter: drop-shadow(0 0 10px #000000e0);
+        animation: navClose 0s linear forwards;
+        animation-delay: 0.5s;
     }
 
     .navToggleButton {
