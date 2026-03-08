@@ -38,12 +38,28 @@ const clickOffNav = function () {
 
 const setRoute = async function(route){
     window.history.pushState({} , "", route)
-    const newPage = await (await fetch(route)).text()
+
     let newContent = document.createElement("html")
-    newContent.innerHTML = newPage
+    newContent.innerHTML = await (await fetch(route)).text()
+
+    const scripts = newContent.querySelectorAll("script.important")
+
+    for(let s of scripts){
+        const script = document.createElement("script")
+        script.text =  s.text
+        document.getElementsByClassName("content")[0].appendChild(script)
+    }
+
     document.getElementsByClassName("content")[0].innerHTML = ""
-    newContent = newContent.children[0].children[2].content
-    document.getElementsByClassName("content")[0].appendChild(newContent)
+
+    const contents = newContent.querySelectorAll(":not(script).important")
+
+    for(let c of contents){
+        document.getElementsByClassName("content")[0].appendChild(c)
+    }
+
+    document.getElementById("pageTitle").text = pageTitle;
+    document.getElementById("headerTitle").textContent = pageTitle;
 }
 
 void (async function () {
@@ -51,10 +67,7 @@ void (async function () {
     layout.innerHTML = await (await fetch("/layout/layout.html")).text();
     document.body.appendChild(layout);
 
-    document.getElementById("pageTitle").text = pageTitle;
-    document.getElementById("headerTitle").textContent = pageTitle;
-
-    let content = document.getElementById("contentTemp").content.cloneNode(true);
+    let content = document.querySelector("div.important");
     document.getElementsByClassName("content")[0].appendChild(content)
     const navButtons = document.getElementsByClassName("nav")[0].children
     for (let a of navButtons){
@@ -62,4 +75,7 @@ void (async function () {
         a.setAttribute('onclick', `void(async ()=> await setRoute('${href}'))()`)
         a.removeAttribute("href")
     }
+
+    document.getElementById("pageTitle").text = pageTitle;
+    document.getElementById("headerTitle").textContent = pageTitle;
 })();

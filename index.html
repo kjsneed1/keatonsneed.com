@@ -2,13 +2,15 @@
 
 <!doctype html>
 
-<link rel="stylesheet" href="./layout/layout.css" />
+<link rel="stylesheet" href="/layout/layout.css" />
 
-<script>
-    const pageTitle = "Home";
+<script src="/layout/layout.js"></script>
+
+<script class="important">
+    pageTitle = "Home";
 </script>
 
-<template id="contentTemp">
+<div class="important">
     <h1>Welcome to my website!</h1>
     <p>
         This site is intended to serve as a digital portfolio, art project, and
@@ -17,7 +19,7 @@
         hope you enjoy looking around!
     </p>
 
-    <a class="bigLink" href="/about" onmouseenter="new Audio('/sounds/mouseClick.mp3').play()">
+    <a class="bigLink" href="/about">
         <div class="bigLinkTop">About</div>
         <div class="bigLinkBottom">
             <div class="bigLinkImage">
@@ -48,6 +50,4 @@
             </div>
         </div>
     </a>
-</template>
-
-<script src="./layout/layout.js"></script>
+</div>
