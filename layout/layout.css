@@ -254,96 +254,6 @@ body {
     width: 100px;
 }
 
-.bigLink{
-    display: inline-block;
-    width: 240px;
-    transition: 0.2s;
-    vertical-align: top;
-    margin: 10px;
-    color: var(--text);
-    text-decoration: none;
-}
-
-.bigLinkTop{
-    background-color: var(--color1dark); 
-    height: 24px;
-    border: 1px solid var(--border);
-    border-bottom: none;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    color: white;
-    text-shadow: 1px 3px 1.5px #272727a0;
-    font-size: 14pt;
-    transition: 0.2s;
-}
-
-.alt .bigLinkTop{
-    background-color: var(--color2dark);
-}
-
-.bigLinkBottom{
-    background-color: var(--color9);
-    height: 80px;
-    transition: 0.2s;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border: 1px solid var(--border);
-    display: flex;
-    margin: 0;
-}
-
-.bigLinkContent{
-    display: inline-block;
-    padding: 5px;
-    overflow: auto;
-    text-align: center;
-    align-content: center;
-    width: 100%;
-    transition: 0.2s;
-}
-
-.bigLinkImage{
-    width: 80px;
-    background-color: var(--background);
-    border-bottom-left-radius: 8px;
-    border-right: 1px solid var(--border);
-    transition: 0.2s;
-    flex:none;
-    padding: 5px;
-    align-content: center;
-}
-
-.bigLinkImage img{
-    width: 45px;
-    margin: 0;;
-    transition: 0.2s;
-}
-
-.bigLink:hover{
-    filter: drop-shadow(0 0 3px var(--border));
-}
-
-.bigLink:hover .bigLinkTop{
-    background-color: var(--color1light);
-}
-
-.bigLink:hover.alt .bigLinkTop{
-    background-color: var(--color2light);
-}
-
-.bigLink:hover .bigLinkBottom{
-    background-color: var(--backgroundHover);
-}
-
-.bigLink:hover .bigLinkImage{
-    background-color: var(--color9);
-}
-
-.bigLink:hover .bigLinkImage img{
-    width:55px;
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
-}
-
 .bigLink:hover .bigLinkContent{
     text-shadow: 1px 3px 1.5px #0c0c0cc0;
 }
@@ -374,12 +284,5 @@ body {
 
     .content {
         padding: 20px;
-    }
-
-    .bigLink{
-        display: block;
-        width: 100%;
-        margin: 0;
-        margin-bottom: 20px;
     }
 }

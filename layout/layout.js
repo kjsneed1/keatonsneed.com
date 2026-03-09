@@ -36,6 +36,14 @@ const clickOffNav = function () {
     }
 };
 
+function linkStyle(href){
+    let styleLink = document.createElement("link");
+    styleLink.rel = "stylesheet";
+    styleLink.type = "text/css";
+    styleLink.href = href;
+    document.getElementsByTagName("HEAD")[0].appendChild(styleLink);
+}
+
 const setRoute = async function(route){
     window.history.pushState({} , "", route)
 
@@ -46,8 +54,9 @@ const setRoute = async function(route){
 
     for(let s of scripts){
         const script = document.createElement("script")
+        if(s.src !== ""){script.src = s.src}
         script.text =  s.text
-        document.getElementsByClassName("content")[0].appendChild(script)
+        document.getElementsByTagName("HEAD")[0].appendChild(script)
     }
 
     document.getElementsByClassName("content")[0].innerHTML = ""
@@ -61,6 +70,9 @@ const setRoute = async function(route){
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
 }
+
+
+linkStyle("/layout/layout.css")
 
 void (async function () {
     const layout = document.createElement("html");
