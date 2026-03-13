@@ -76,7 +76,7 @@ const setRoute = async function (route, pop = false) {
     clickOffNav();
 };
 
-window.history.pushState(location.pathname, "");
+window.history.replaceState(location.pathname, "");
 
 onpopstate = (event) => {
     console.log("here");
