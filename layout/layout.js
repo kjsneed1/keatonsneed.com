@@ -36,6 +36,19 @@ const clickOffNav = function () {
     }
 };
 
+const audio = {
+    select: new Audio("/sounds/select.ogg"),
+    hover: new Audio("/sounds/hover.ogg"),
+};
+
+audio.select.preload = "auto";
+audio.select.load();
+
+const playSound = function (sound) {
+    audio[sound].currentTime = 0;
+    audio[sound].play();
+};
+
 function linkStyle(href) {
     let styleLink = document.createElement("link");
     styleLink.rel = "stylesheet";
@@ -47,6 +60,7 @@ function linkStyle(href) {
 const setRoute = async function (route, pop = false) {
     if (!pop) {
         window.history.pushState(route, "", route);
+        playSound("select");
     }
 
     let newContent = document.createElement("html");
@@ -73,6 +87,7 @@ const setRoute = async function (route, pop = false) {
 
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
+
     clickOffNav();
 };
 
@@ -100,6 +115,7 @@ void (async function () {
             `void(async ()=> await setRoute('${href}'))()`,
         );
         a.removeAttribute("href");
+        a.setAttribute("onmouseenter", "playSound('hover');");
     }
 
     document.getElementById("pageTitle").text = pageTitle;

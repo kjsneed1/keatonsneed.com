@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <audio id="backgroundMusic" src="/music/backgroundMusic.mp3" loop></audio>
     <div class="center">
         <div class="welcome">
             <h1 id="headerTitle">{headerTitle}</h1>
@@ -39,7 +40,10 @@
                     </a>
                 </div>
             </div>
-            <div class="content" onclick="clickOffNav()"></div>
+            <div class="main" onclick="clickOffNav()">
+                <div class="banner"><div class="bannerMessage">This is a test message!</div></div>
+                <div class="content"></div>
+            </div>
         </div>
         <div class="foot"></div>
     </div>

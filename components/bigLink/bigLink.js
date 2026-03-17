@@ -11,6 +11,7 @@ void (() => {
             `void(async ()=> await setRoute('${href}'))()`,
         );
         b.removeAttribute("href");
+        b.setAttribute("onmouseenter", "playSound('hover');");
     }
 })();
 
