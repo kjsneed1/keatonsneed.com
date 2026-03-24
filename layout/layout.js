@@ -44,9 +44,13 @@ const audio = {
 audio.select.preload = "auto";
 audio.select.load();
 
+let muted = localStorage.getItem("muted") === "true" || false;
+
 const playSound = function (sound) {
-    audio[sound].currentTime = 0;
-    audio[sound].play();
+    if (!muted) {
+        audio[sound].currentTime = 0;
+        audio[sound].play();
+    }
 };
 
 function linkStyle(href) {
@@ -94,9 +98,39 @@ const setRoute = async function (route, pop = false) {
 window.history.replaceState(location.pathname, "");
 
 onpopstate = (event) => {
-    console.log("here");
     setRoute(event.state, true);
 };
+
+
+const handleMute = function () {
+    muted = !muted;
+
+    localStorage.setItem("muted",muted)
+    console.log(localStorage.getItem("muted"))
+
+    if (muted) {
+        muteIcon.src = "/icons/volume-slash.svg";
+    } else {
+        muteIcon.src = "/icons/volume.svg";
+    }
+};
+
+let center;
+let fullscreen  = localStorage.getItem("fullscreen") === "true" || false;
+
+const handleFullscreen = function() {
+    fullscreen = !fullscreen
+    localStorage.setItem("fullscreen", fullscreen)
+
+    if(fullscreen){
+        center.classList.add('fullscreen')
+        fullscreenIcon.src = "/icons/compress.svg"
+    }
+    else{
+        center.classList.remove('fullscreen')
+        fullscreenIcon.src = "/icons/expand.svg"
+    }
+}
 
 linkStyle("/layout/layout.css");
 
@@ -120,4 +154,18 @@ void (async function () {
 
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
+
+    const muteIcon = document.getElementById("muteIcon");
+    const fullscreenIcon = document.getElementById("fullscreenIcon");
+
+    if (muted) {
+        muteIcon.src = "/icons/volume-slash.svg";
+    }
+
+    center = document.getElementsByClassName("center")[0];
+
+    if(fullscreen){
+        center.classList.add('fullscreen')
+        fullscreenIcon.src = "/icons/compress.svg"
+    }
 })();

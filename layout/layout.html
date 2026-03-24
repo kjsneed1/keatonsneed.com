@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no" />
 
 <script>
-    let pageTitle = "Default Title"
+    let pageTitle = "Default Title";
 </script>
 
 <head>
@@ -9,10 +9,16 @@
 </head>
 
 <body>
-    <audio id="backgroundMusic" src="/music/backgroundMusic.mp3" loop></audio>
+    <audio id="backgroundMusic" src="/music/silence.mp3" autoplay loop></audio>
     <div class="center">
         <div class="welcome">
+            <div class="headerTime">12:34 PM</div>
             <h1 id="headerTitle">{headerTitle}</h1>
+            <div class="headerButtons">
+                <button onclick="handleMute()"><img id="muteIcon" src="/icons/volume.svg" /></button>
+                <button><img src="/icons/fill.svg" /></button>
+                <button onclick="handleFullscreen()"><img id="fullscreenIcon" src="/icons/expand.svg" /></button>
+            </div>
         </div>
         <div class="myflex">
             <div class="navContainer">
@@ -41,7 +47,14 @@
                 </div>
             </div>
             <div class="main" onclick="clickOffNav()">
-                <div class="banner"><div class="bannerMessage">This is a test message!</div></div>
+                <div class="banner">
+                    <div class="bannerMessage1">
+                        <b>UPDATE!</b> This is a test message!
+                    </div>
+                    <div class="bannerMessage2">
+                        <b>UPDATE!</b> This is a test message!
+                    </div>
+                </div>
                 <div class="content"></div>
             </div>
         </div>
