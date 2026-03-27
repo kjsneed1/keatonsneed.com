@@ -101,12 +101,11 @@ onpopstate = (event) => {
     setRoute(event.state, true);
 };
 
-
 const handleMute = function () {
     muted = !muted;
 
-    localStorage.setItem("muted",muted)
-    console.log(localStorage.getItem("muted"))
+    localStorage.setItem("muted", muted);
+    console.log(localStorage.getItem("muted"));
 
     if (muted) {
         muteIcon.src = "/icons/volume-slash.svg";
@@ -116,20 +115,53 @@ const handleMute = function () {
 };
 
 let center;
-let fullscreen  = localStorage.getItem("fullscreen") === "true" || false;
+let fullscreen = localStorage.getItem("fullscreen") === "true" || false;
 
-const handleFullscreen = function() {
-    fullscreen = !fullscreen
-    localStorage.setItem("fullscreen", fullscreen)
+const handleFullscreen = function () {
+    fullscreen = !fullscreen;
+    localStorage.setItem("fullscreen", fullscreen);
 
-    if(fullscreen){
-        center.classList.add('fullscreen')
-        fullscreenIcon.src = "/icons/compress.svg"
+    if (fullscreen) {
+        center.classList.add("fullscreen");
+        fullscreenIcon.src = "/icons/compress.svg";
+    } else {
+        center.classList.remove("fullscreen");
+        fullscreenIcon.src = "/icons/expand.svg";
     }
-    else{
-        center.classList.remove('fullscreen')
-        fullscreenIcon.src = "/icons/expand.svg"
+};
+
+let themeIsOpen = false;
+
+const hideThemePopup = function (){
+    themeIsOpen = false
+
+    const themePopup = document.getElementsByClassName("themePopup")[0];
+    themePopup.style.display = "none";
+}
+
+const handleThemeOpen = function () {
+    themeIsOpen = !themeIsOpen;
+
+    const themePopup = document.getElementsByClassName("themePopup")[0];
+
+    if (themeIsOpen) {
+        themePopup.style.display = "inline";
+    } else {
+        themePopup.style.display = "none";
     }
+};
+
+let theme = localStorage.getItem("theme") || "theme1";
+
+const setTheme = function(t){
+
+    body.classList.remove(theme)
+    body.classList.add(t)
+
+
+    localStorage.setItem("theme", t)
+
+    theme = t
 }
 
 linkStyle("/layout/layout.css");
@@ -164,8 +196,12 @@ void (async function () {
 
     center = document.getElementsByClassName("center")[0];
 
-    if(fullscreen){
-        center.classList.add('fullscreen')
-        fullscreenIcon.src = "/icons/compress.svg"
+    if (fullscreen) {
+        center.classList.add("fullscreen");
+        fullscreenIcon.src = "/icons/compress.svg";
     }
+
+    const body = document.getElementById("body")
+
+    body.classList.add(theme)
 })();

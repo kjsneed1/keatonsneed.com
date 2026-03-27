@@ -1,15 +1,4 @@
-:root {
-    --background: #22273b;
-    --backgroundClear: #22273b50;
-    --color1dark: #67a171;
-    --color1light: #7db88e;
-    --color2dark: #5bb1ae;
-    --color2light: #79c7c5;
-    --text: #b1b1b1;
-    --backgroundHover: #454c66;
-    --color9: #2e334b;
-    --border: #6b7292;
-}
+@import url("/layout/colors.css");
 
 @keyframes myAnimation {
     from {
@@ -240,6 +229,7 @@ body {
     margin:0px 5px; 
     width: 110px;
     flex: none;
+    position: relative;
 }
 
 .headerButtons button{
@@ -256,6 +246,80 @@ body {
     vertical-align: top;
     transition: 0.25s;
     margin:0px 3px;
+}
+
+.themePopup{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    top: 36px;
+    display: none;
+}
+
+.themeArrow{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--color1dark);
+    transform: translate(-50%,2px);
+}
+
+.themeArrowOutline{
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid var(--border);
+    margin: auto;
+    z-index: 1;
+}
+
+.themeTop{
+    background-color: var(--color1dark);
+    width: 100px;
+    height: 10px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: -1;
+    transform: translate(0,-1px);
+    position: relative;
+}
+
+.themeBox{
+    width: 100px;
+    height: 120px;
+    background-color: var(--color9);
+    border: 1px solid var(--border);
+    transform: translate(0,-1px);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: center;
+    padding: 5px;
+}
+
+.themePuck{
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(
+        45deg,
+        var(--color1dark) 40%,
+        var(--color2dark) 60%
+    );
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    display: inline-block;
+}
+
+.themePuck:hover{
+    background-image: linear-gradient(
+        45deg,
+        var(--color1light) 40%,
+        var(--color2light) 60%
+    );
 }
 
 .headerButtons button:hover img{
@@ -404,6 +468,10 @@ body {
 .fullscreen .nav{
     border-left: none;
     height: calc(100vh - 42px);
+    transition:
+        width 0.5s,
+        height 0s;
+    transition-delay: 0s, 0.5s;
 }
 
 .fullscreen .main{

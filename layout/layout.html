@@ -8,19 +8,42 @@
     <title id="pageTitle">{pageTitle}</title>
 </head>
 
-<body>
+<bod id="body">
     <audio id="backgroundMusic" src="/music/silence.mp3" autoplay loop></audio>
     <div class="center">
         <div class="welcome">
             <div class="headerTime">12:34 PM</div>
             <h1 id="headerTitle">{headerTitle}</h1>
             <div class="headerButtons">
-                <button onclick="handleMute()"><img id="muteIcon" src="/icons/volume.svg" /></button>
-                <button><img src="/icons/fill.svg" /></button>
-                <button onclick="handleFullscreen()"><img id="fullscreenIcon" src="/icons/expand.svg" /></button>
+                <button onclick="handleMute()">
+                    <img id="muteIcon" src="/icons/volume.svg" />
+                </button>
+                <button onclick="handleThemeOpen()">
+                    <img src="/icons/fill.svg" />
+                </button>
+                <button onclick="handleFullscreen()">
+                    <img id="fullscreenIcon" src="/icons/expand.svg" />
+                </button>
+                <div class="themePopup">
+                    <div class="themeArrowOutline">
+                        <div class="themeArrow"></div>
+                    </div>
+                    <div class="themeTop"></div>
+                    <div class="themeBox">
+                        <div onclick="setTheme('theme1')" class="themePuck theme1"></div>
+                        <div onclick="setTheme('theme2')" class="themePuck theme2"></div>
+                        <div onclick="setTheme('theme3')" class="themePuck theme3"></div>
+                        <div onclick="setTheme('theme4')" class="themePuck theme4"></div>
+                        <div onclick="setTheme('theme5')" class="themePuck theme5"></div>
+                        <div onclick="setTheme('theme6')" class="themePuck theme6"></div>
+                        <div onclick="setTheme('theme7')" class="themePuck theme7"></div>
+                        <div onclick="setTheme('theme8')" class="themePuck theme8"></div>
+                        <div onclick="setTheme('theme9')" class="themePuck theme9"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="myflex">
+        <div class="myflex" onclick="hideThemePopup()">
             <div class="navContainer">
                 <button class="navToggleButton" onclick="navToggle()">
                     <img src="/icons/menu-burger.svg" />
