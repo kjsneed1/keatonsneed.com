@@ -62,6 +62,26 @@ body {
     align-content: center;
 }
 
+path{
+    fill: var(--color1light);
+}
+
+path.color1{
+    fill: var(--color1light);
+}
+
+.color1 path{
+    fill: var(--color1light);
+}
+
+path.color2{
+    fill: var(--color2light)
+}
+
+.color2 path{
+    fill: var(--color2light)
+}
+
 .center {
     max-width: 1280px;
     margin: auto;
@@ -118,11 +138,15 @@ body {
     vertical-align: super;
 }
 
-.nav a img {
+.nav a svg {
     width: 16px;
     margin-right: 8px;
     vertical-align: top;
     transition: 0.2s;
+}
+
+.nav a object {
+    width: 16px;
 }
 
 .nav a div p {
@@ -138,7 +162,7 @@ body {
     cursor: url("/images/cursor-default.png"), pointer;
 }
 
-.nav a:hover img {
+.nav a:hover svg {
     width: 22px;
     filter: drop-shadow(1px 3px 1px #0c0c0cc0);
 }
@@ -174,7 +198,7 @@ body {
     transition: 0.2s;
 }
 
-.navToggleButton img {
+.navToggleButton svg {
     width: 16px;
     margin: 0;
     transition: 0.2s;
@@ -185,7 +209,7 @@ body {
     filter: drop-shadow(0 0 3px var(--border));
 }
 
-.navToggleButton:hover img {
+.navToggleButton:hover svg {
     filter: drop-shadow(1px 3px 1px #0c0c0cc0);
 }
 

@@ -105,7 +105,6 @@ const handleMute = function () {
     muted = !muted;
 
     localStorage.setItem("muted", muted);
-    console.log(localStorage.getItem("muted"));
 
     if (muted) {
         muteIcon.src = "/icons/volume-slash.svg";

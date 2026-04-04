@@ -57,7 +57,7 @@
     align-content: center;
 }
 
-.bigLinkImage img{
+.bigLinkImage svg{
     width: 45px;
     margin: 0;;
     transition: 0.2s;
@@ -83,7 +83,7 @@
     background-color: var(--color9);
 }
 
-.bigLink:hover .bigLinkImage img{
+.bigLink:hover .bigLinkImage svg{
     width:55px;
     filter: drop-shadow(1px 3px 1px #0c0c0cc0);
 }
