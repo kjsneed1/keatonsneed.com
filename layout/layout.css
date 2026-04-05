@@ -46,9 +46,12 @@
     box-sizing: border-box;
 }
 
-html {
+body {
     background-image: url("/images/BackImage.png");
     animation: myAnimation 16s linear infinite;
+    height: 100vh;
+    margin: 0px;
+    align-content: center;
     font-family:
         "MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
         Sans-serif;
@@ -56,10 +59,12 @@ html {
     cursor: url(/images/cursor-default.png), auto;
 }
 
-body {
-    height: 100vh;
-    margin: 0px;
-    align-content: center;
+body.dark {
+    background-image: url("/images/BackImage.png");
+}
+
+body.light {
+    background-image: url("/images/BackImageLight.png");
 }
 
 path{
@@ -372,6 +377,53 @@ path.color2{
         var(--color1light) 40%,
         var(--color2light) 60%
     );
+}
+
+.themeSlider{
+    margin: auto;
+    width: 60px;
+    height: 24px;
+    border: solid 1px var(--border);
+    border-radius: 100px;
+    background-color: var(--background);
+    z-index: -1;
+    position: relative;
+}
+
+.themeSliderPuck{
+    height: 100%;
+    width: 30px;
+    outline: solid 1px var(--border);
+    border-radius: 100px;
+    background-color: var(--backgroundHover);
+    transition: margin 0.5s;
+}
+
+.dark .themeSliderPuck{
+    margin-left: 0px;
+}
+
+.light .themeSliderPuck{
+    margin-left: 28px;
+}
+
+.themeSlider svg{
+    width: 14px;
+    position: absolute;
+    top:4px;
+}
+
+.themeSlider .moon{
+    left: 8px;
+}
+
+.themeSlider .sun{
+    right: 8px;
+}
+
+
+.themeSlider .moon path {
+    fill: var(--color2light);
 }
 
 .headerButtons button:hover img{

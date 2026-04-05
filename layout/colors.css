@@ -22,6 +22,16 @@
     --shadow: #080808d0;
 }
 
+.light {
+    --background: #c3c6d2;
+    --backgroundClear: #c8cad487;
+    --text: #2c2c2c;
+    --backgroundHover: #ebecf2;
+    --color9: #d5d7df;
+    --border: #888da1;
+    --shadow: #60606081;
+}
+
 .theme1{
     --color1dark: #67a171;
     --color1light: #7db88e;

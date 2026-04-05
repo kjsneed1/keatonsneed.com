@@ -16,7 +16,7 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     color: white;
-    text-shadow: 1px 3px 1.5px #272727a0;
+    text-shadow: 1px 3px 1.5px var(--shadow);
     font-size: 14pt;
     transition: 0.2s;
 }
@@ -85,7 +85,7 @@
 
 .bigLink:hover .bigLinkImage svg{
     width:55px;
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
+    filter: drop-shadow(1px 3px 1px var(--shadow));
 }
 
 

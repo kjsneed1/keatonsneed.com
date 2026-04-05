@@ -131,12 +131,12 @@ const handleFullscreen = function () {
 
 let themeIsOpen = false;
 
-const hideThemePopup = function (){
-    themeIsOpen = false
+const hideThemePopup = function () {
+    themeIsOpen = false;
 
     const themePopup = document.getElementsByClassName("themePopup")[0];
-    themePopup.classList.remove("visible")
-}
+    themePopup.classList.remove("visible");
+};
 
 const handleThemeOpen = function () {
     themeIsOpen = !themeIsOpen;
@@ -144,24 +144,36 @@ const handleThemeOpen = function () {
     const themePopup = document.getElementsByClassName("themePopup")[0];
 
     if (themeIsOpen) {
-        themePopup.classList.add("visible")
+        themePopup.classList.add("visible");
     } else {
-        themePopup.classList.remove("visible")
+        themePopup.classList.remove("visible");
     }
 };
 
 let theme = localStorage.getItem("theme") || "theme1";
 
-const setTheme = function(t){
+const setTheme = function (t) {
+    body.classList.remove(theme);
+    body.classList.add(t);
 
-    body.classList.remove(theme)
-    body.classList.add(t)
+    localStorage.setItem("theme", t);
 
+    theme = t;
+};
 
-    localStorage.setItem("theme", t)
+let darkTheme = true;
 
-    theme = t
-}
+const toggleTheme = function () {
+    darkTheme = !darkTheme;
+
+    if (darkTheme) {
+        body.classList.remove("light");
+        body.classList.add("dark");
+    } else {
+        body.classList.remove("dark");
+        body.classList.add("light");
+    }
+};
 
 linkStyle("/layout/layout.css");
 
@@ -200,7 +212,7 @@ void (async function () {
         fullscreenIcon.src = "/icons/compress.svg";
     }
 
-    const body = document.getElementById("body")
+    const body = document.getElementById("body");
 
-    body.classList.add(theme)
+    body.classList.add(theme);
 })();
