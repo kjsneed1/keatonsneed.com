@@ -161,10 +161,19 @@ const setTheme = function (t) {
     theme = t;
 };
 
-let darkTheme = true;
+let darkTheme;
+const darkThemeStorage = localStorage.getItem("darkTheme")
+
+if(darkThemeStorage === "false"){
+    darkTheme = false
+}
+else{
+    darkTheme = true
+}
 
 const toggleTheme = function () {
     darkTheme = !darkTheme;
+    localStorage.setItem("darkTheme",darkTheme)
 
     if (darkTheme) {
         body.classList.remove("light");
@@ -215,4 +224,11 @@ void (async function () {
     const body = document.getElementById("body");
 
     body.classList.add(theme);
+
+    if (darkTheme) {
+        body.classList.add("dark");
+    } else {
+        body.classList.add("light");
+    }
+
 })();
