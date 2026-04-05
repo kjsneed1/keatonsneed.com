@@ -135,7 +135,7 @@ const hideThemePopup = function (){
     themeIsOpen = false
 
     const themePopup = document.getElementsByClassName("themePopup")[0];
-    themePopup.style.display = "none";
+    themePopup.classList.remove("visible")
 }
 
 const handleThemeOpen = function () {
@@ -144,9 +144,9 @@ const handleThemeOpen = function () {
     const themePopup = document.getElementsByClassName("themePopup")[0];
 
     if (themeIsOpen) {
-        themePopup.style.display = "inline";
+        themePopup.classList.add("visible")
     } else {
-        themePopup.style.display = "none";
+        themePopup.classList.remove("visible")
     }
 };
 

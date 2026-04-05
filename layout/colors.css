@@ -9,6 +9,7 @@
     --backgroundHover: #454c66;
     --color9: #2e334b;
     --border: #6b7292;
+    --shadow: #0c0c0cc0;
 }
 
 .dark {
@@ -18,6 +19,7 @@
     --backgroundHover: #454c66;
     --color9: #2e334b;
     --border: #6b7292;
+    --shadow: #080808d0;
 }
 
 .theme1{

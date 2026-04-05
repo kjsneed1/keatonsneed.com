@@ -90,7 +90,7 @@ path.color2{
     flex-direction: column;
     padding: 20px;
     height: 860px;
-    filter: drop-shadow(0 0 15px #000000e0);
+    filter: drop-shadow(0 0 15px var(--shadow));
     transition: 0.5s;
 }
 
@@ -164,12 +164,12 @@ path.color2{
 
 .nav a:hover svg {
     width: 22px;
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
+    filter: drop-shadow(1px 3px 1px var(--shadow));
 }
 
 .nav a:hover div {
     animation: hoverLink 1.2s infinite;
-    text-shadow: 1px 3px 1.5px #0c0c0cc0;
+    text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
 .nav a:active {
@@ -210,7 +210,7 @@ path.color2{
 }
 
 .navToggleButton:hover svg {
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
+    filter: drop-shadow(1px 3px 1px var(--shadow));
 }
 
 .welcome {
@@ -230,7 +230,7 @@ path.color2{
     align-content: center;
     z-index: 3;
     display: flex;
-    text-shadow: 1px 3px 1.5px #0c0c0cc0;
+    text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
 .welcome h1 {
@@ -266,10 +266,28 @@ path.color2{
 
 .headerButtons img{
     width: 14px;
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0);
+    filter: drop-shadow(1px 3px 1px var(--shadow));
     vertical-align: top;
     transition: 0.25s;
     margin:0px 3px;
+}
+
+@keyframes themeOpen {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes themeClose {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
 }
 
 .themePopup{
@@ -277,7 +295,17 @@ path.color2{
     left: 50%;
     transform: translate(-50%,0%);
     top: 36px;
-    display: none;
+    filter: drop-shadow(0 0 10px var(--shadow));
+    animation: themeClose 0.15s linear forwards;
+    visibility: hidden;
+    transition: visibility 0s;
+    transition-delay: 0.15s;
+}
+
+.themePopup.visible{
+    visibility: visible;
+    transition-delay: 0s;
+    animation: themeOpen 0.15s linear forwards;
 }
 
 .themeArrow{
@@ -347,7 +375,7 @@ path.color2{
 }
 
 .headerButtons button:hover img{
-    filter: drop-shadow(1px 3px 1px #0c0c0cc0) brightness(75%);
+    filter: drop-shadow(1px 3px 1px var(--shadow)) brightness(75%);
 }
 
 .foot {
@@ -437,7 +465,7 @@ path.color2{
 }
 
 .bigLink:hover .bigLinkContent {
-    text-shadow: 1px 3px 1.5px #0c0c0cc0;
+    text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
 @media only screen and (max-width: 768px) {
@@ -452,7 +480,7 @@ path.color2{
         z-index: 2;
         height: calc(100vh - 52px);
         transition-delay: 0s, 0.5s;
-        filter: drop-shadow(0 0 10px #0c0c0cc0);
+        filter: drop-shadow(0 0 10px var(--shadow));
     }
 
     .navContainer {
