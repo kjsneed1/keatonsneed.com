@@ -1,3 +1,5 @@
+linkStyle("/layout/layout.css");
+
 let isWide = window.matchMedia("(min-width: 769px)");
 
 isWide.addEventListener("change", function () {
@@ -184,7 +186,11 @@ const toggleTheme = function () {
     }
 };
 
-linkStyle("/layout/layout.css");
+const closeBanner = function(){
+    let banner = document.getElementsByClassName("banner")[0]
+
+    banner.classList.add("closed")
+}
 
 void (async function () {
     const layout = document.createElement("html");
