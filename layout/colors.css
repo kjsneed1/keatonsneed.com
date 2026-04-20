@@ -28,8 +28,8 @@
     --backgroundClear: #c8cad487;
     --text: #353535;
     --backgroundHover: #ebecf2;
-    --color9: #dcdee4;
-    --border: #9196aa;
+    --color9: #d7dbe7;
+    --border: #888d9d;
     --shadow: #60606081;
 }
 
@@ -55,8 +55,8 @@
 }
 
 .theme4 {
-    --color1dark: #9dae48;
-    --color1light: #b1be6e;
+    --color1dark: #9da74c;
+    --color1light: #b3bd5b;
     --color2dark: #67b177;
     --color2light: #81bf8e;
 }
@@ -69,29 +69,8 @@
 }
 
 .theme6 {
-    --color1dark: #b2864a;
-    --color1light: #c69d63;
-    --color2dark: #5d5ab5;
-    --color2light: #7f7ccb;
-}
-
-.theme7 {
-    --color1dark: #b24aa1;
-    --color1light: #c667b6;
-    --color2dark: #5371b9;
-    --color2light: #7892cf;
-}
-
-.theme8 {
-    --color1dark: #4ab269;
-    --color1light: #6cc887;
-    --color2dark: #7253b9;
-    --color2light: #8f75c9;
-}
-
-.theme9 {
-    --color1dark: #9b9b9b;
-    --color1light: #ababab;
-    --color2dark: #5f5f5f;
-    --color2light: #6b6b6b;
+    --color1dark: #5d5ab5;
+    --color1light: #7f7ccb;
+    --color2dark: #9f4ab2;
+    --color2light: #ae56c2;
 }
