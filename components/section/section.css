@@ -1,0 +1,132 @@
+.section{
+    width: 100%;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.sectionTop{
+    color: white;
+    background-color: var(--color1dark);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    height: 24px;
+    border-bottom: solid 1px var(--border);
+    font-size: 14pt;
+    align-content: center;
+    text-shadow: 1px 3px 1.5px var(--shadow);
+}
+
+.alt .sectionTop{
+    background-color: var(--color2dark);
+}
+
+.sectionMain{
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    scrollbar-color: (--color1dark) var(--color9);
+}
+
+.alt .sectionMain{
+    flex-direction: row-reverse;
+    scrollbar-color: (--color2dark) var(--color9);
+}
+
+.sectionImage{
+    background-color: var(--color9);
+    height: 100%;
+    width: 30%;
+    min-width: 200px;
+    border-bottom-left-radius: 7px;
+    border-right: solid 1px var(--border);
+    align-content: center;
+}
+
+.alt .sectionImage{
+    border-right: none;
+    border-left: 1px solid var(--border);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 7px;
+}
+
+.sectionImage img{
+    width: 100%;
+    max-width: 240px;
+}
+
+.sectionContent{
+    width: 70%;
+    height: 100%;
+    padding: 0px 10px;
+    text-align: left;
+    scrollbar-color: (--color1dark) var(--color9);
+    overflow: auto;
+}
+
+.sectionContent h2{
+    font-size: 16pt;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.sectionContent h4{
+    margin-top: 0px;
+    margin-bottom: 2px;
+    font-weight: lighter;
+    color: var(--color1dark);
+}
+
+.alt .sectionContent h4{
+    color: var(--color2dark);
+}
+
+.sectionContent ul{
+    margin-top: 8px;
+}
+
+.sectionContent li{
+    margin-left: -20px;
+    margin-bottom: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+    .sectionMain{
+        flex-direction: column-reverse;
+        height: fit-content;
+        position: relative;
+    }
+
+    .alt .sectionMain{
+        flex-direction: column-reverse;
+    }
+
+    .sectionImage{
+        width: 120px;
+        min-width: 100px;
+        border-top: solid 1px var(--border);
+        border-bottom-left-radius: 7px;
+        border-top-right-radius: 7px;
+        height: 50px;
+        position: absolute;
+    }
+
+    .alt .sectionImage{
+        border-left: none;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 8px;
+        border-left: solid 1px var(--border);
+        right: 0;
+    }
+
+    .sectionImage img{
+        width: 100px;
+        margin-top: -8px;
+    }
+
+    .sectionContent{
+        width: 100%;
+        padding-bottom: 50px;
+    }
+}

@@ -83,12 +83,12 @@ const setRoute = async function (route, pop = false) {
         document.getElementsByTagName("HEAD")[0].appendChild(script);
     }
 
-    document.getElementsByClassName("content")[0].innerHTML = "";
+    document.getElementsByClassName("contentWidthForce")[0].innerHTML = "";
 
     const contents = newContent.querySelectorAll(":not(script).important");
 
     for (let c of contents) {
-        document.getElementsByClassName("content")[0].appendChild(c);
+        document.getElementsByClassName("contentWidthForce")[0].appendChild(c);
     }
 
     document.getElementById("pageTitle").text = pageTitle;
@@ -198,7 +198,7 @@ void (async function () {
     document.body.appendChild(layout);
 
     let content = document.querySelector("div.important");
-    document.getElementsByClassName("content")[0].appendChild(content);
+    document.getElementsByClassName("contentWidthForce")[0].appendChild(content);
     const navButtons = document.getElementsByClassName("nav")[0].children;
     for (let a of navButtons) {
         const href = a.href;

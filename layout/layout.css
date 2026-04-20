@@ -465,6 +465,13 @@ path.color2 {
     scrollbar-width: thin;
 }
 
+.contentWidthForce{
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
 .banner {
     background-color: var(--background);
     height: 24px;
@@ -546,6 +553,15 @@ path.color2 {
     text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
+.throughLine{
+    height: 40px;
+    width: 1px;
+    background-color: var(--border);
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 @media only screen and (max-width: 768px) {
     .center {
         padding: 5px;
@@ -571,7 +587,11 @@ path.color2 {
     }
 
     .content {
-        padding: 20px;
+        padding: 20px 10px;
+    }
+
+    .banner button{
+        opacity: 100%;
     }
 }
 
