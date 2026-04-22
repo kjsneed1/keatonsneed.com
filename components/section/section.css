@@ -75,11 +75,19 @@
     margin-top: 0px;
     margin-bottom: 2px;
     font-weight: lighter;
+    color: var(--color1light);
+}
+
+.light .sectionContent h4 {
     color: var(--color1dark);
 }
 
-.alt .sectionContent h4{
-    color: var(--color2dark);
+.alt .sectionContent h4 {
+    color: var(--color2light);
+}
+
+.light .alt .sectionContent h4{
+    color: var(--color2dark)
 }
 
 .sectionContent ul{
