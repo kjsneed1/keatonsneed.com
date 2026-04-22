@@ -1,0 +1,75 @@
+.mediumLink {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin: 20px;
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+.mediumLinkImage {
+    height: 140px;
+    width: 140px;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: 0.25s;
+    align-content: center;
+}
+
+.mediumLinkImage img {
+    vertical-align: center;
+    width: 120px;
+    transition: 0.25s;
+}
+
+.mediumLinkBottom {
+    background-color: var(--color1dark);
+    color: white;
+    border: solid 1px var(--border);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 24px;
+    align-content: center;
+    text-shadow: 1px 3px 1.5px var(--shadow);
+    font-size: 14pt;
+    transition: 0.25s;
+}
+
+.alt .mediumLinkBottom {
+    background-color: var(--color2dark);
+}
+
+.mediumLinkContainer {
+    display: inline-block;
+    width: fit-content;
+}
+
+.mediumLink:hover {
+    filter: drop-shadow(0 0 3px var(--border));
+}
+
+.mediumLink:hover .mediumLinkImage {
+    background-color: var(--color9);
+}
+
+.mediumLink:hover .mediumLinkBottom {
+    background-color: var(--color1light);
+}
+
+.mediumLink.alt:hover .mediumLinkBottom {
+    background-color: var(--color2light);
+}
+
+.mediumLink:hover .mediumLinkImage img {
+    width: 140px;
+    filter: drop-shadow(1px 3px 1px var(--shadow));
+}
+
+@media only screen and (max-width: 768px) {
+    .mediumLink {
+        margin: 10px;
+    }
+}
