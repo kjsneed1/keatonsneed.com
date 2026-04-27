@@ -39,19 +39,27 @@ const clickOffNav = function () {
 };
 
 const audio = {
-    select: new Audio("/sounds/select.ogg"),
+    select: [new Audio("/sounds/select1.ogg"),new Audio("/sounds/select2.ogg"),new Audio("/sounds/select3.ogg"),],
     hover: new Audio("/sounds/hover.ogg"),
+    mute: new Audio("/sounds/mute.ogg"),
+    unmute: new Audio("/sounds/unmute.ogg"),
 };
-
-audio.select.preload = "auto";
-audio.select.load();
 
 let muted = localStorage.getItem("muted") === "true" || false;
 
 const playSound = function (sound) {
     if (!muted) {
-        audio[sound].currentTime = 0;
-        audio[sound].play();
+        if(Array.isArray(audio[sound])){
+            let sChoice = Math.floor(Math.random() * audio[sound].length);
+
+            audio[sound][sChoice].currentTime = 0;
+            audio[sound][sChoice].play();
+        }
+        else{
+            audio[sound].currentTime = 0;
+            audio[sound].play();
+        }
+        
     }
 };
 
@@ -104,15 +112,18 @@ onpopstate = (event) => {
 };
 
 const handleMute = function () {
-    muted = !muted;
-
-    localStorage.setItem("muted", muted);
 
     if (muted) {
-        muteIcon.src = "/icons/volume-slash.svg";
-    } else {
+        muted = false;
+        playSound("unmute")
         muteIcon.src = "/icons/volume.svg";
+    } else {
+        playSound("mute")
+        muted = true;
+        muteIcon.src = "/icons/volume-slash.svg";
     }
+
+    localStorage.setItem("muted", muted);
 };
 
 let center;

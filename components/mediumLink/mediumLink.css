@@ -65,7 +65,6 @@
 
 .mediumLink:hover .mediumLinkImage img {
     width: 140px;
-    filter: drop-shadow(1px 3px 1px var(--shadow));
 }
 
 @media only screen and (max-width: 768px) {

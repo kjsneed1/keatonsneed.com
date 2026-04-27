@@ -169,12 +169,10 @@ path.color2 {
 
 .nav a:hover svg {
     width: 22px;
-    filter: drop-shadow(1px 3px 1px var(--shadow));
 }
 
 .nav a:hover div {
     animation: hoverLink 1.2s infinite;
-    text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
 .nav a:active {
@@ -211,11 +209,6 @@ path.color2 {
 
 .navToggleButton:hover {
     background-color: var(--backgroundHover);
-    filter: drop-shadow(0 0 3px var(--border));
-}
-
-.navToggleButton:hover svg {
-    filter: drop-shadow(1px 3px 1px var(--shadow));
 }
 
 .welcome {
@@ -526,6 +519,7 @@ path.color2 {
     right: 0;
     opacity: 0%;
     transition: 0.25s;
+    padding: 0px;
 }
 
 .banner:hover button{
@@ -534,6 +528,10 @@ path.color2 {
 
 .banner button:hover{
     background-color: var(--backgroundHover);
+}
+
+.banner button svg{
+    width: 16px;
 }
 
 .banner.closed{
@@ -548,10 +546,6 @@ path.color2 {
 
 ::-webkit-scrollbar:hover {
     width: 100px;
-}
-
-.bigLink:hover .bigLinkContent {
-    text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
 .throughLine{
