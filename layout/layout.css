@@ -46,6 +46,11 @@
     box-sizing: border-box;
 }
 
+::selection{
+    background-color: var(--color1dark);
+    color: white;
+}
+
 body {
     background-image: url("/images/BackImage.png");
     animation: myAnimation 16s linear infinite;
@@ -67,23 +72,15 @@ body.light {
     background-image: url("/images/BackImageLight.png");
 }
 
-path {
+svg {
     fill: var(--color1light);
 }
 
-path.color1 {
-    fill: var(--color1light);
-}
-
-.color1 path {
-    fill: var(--color1light);
-}
-
-path.color2 {
+svg.alt {
     fill: var(--color2light);
 }
 
-.color2 path {
+path.alt {
     fill: var(--color2light);
 }
 
@@ -145,6 +142,7 @@ path.color2 {
 
 .nav a svg {
     width: 16px;
+    height: 16px;
     margin-right: 8px;
     vertical-align: top;
     transition: 0.2s;
@@ -169,6 +167,7 @@ path.color2 {
 
 .nav a:hover svg {
     width: 22px;
+    height: 22px;
 }
 
 .nav a:hover div {
@@ -203,6 +202,7 @@ path.color2 {
 
 .navToggleButton svg {
     width: 16px;
+    height: 16px;
     margin: 0;
     transition: 0.2s;
 }
@@ -403,6 +403,7 @@ path.color2 {
 
 .themeSlider svg {
     width: 14px;
+    height: 14px;
     position: absolute;
     top: 4px;
 }
@@ -415,7 +416,11 @@ path.color2 {
     right: 8px;
 }
 
-.themeSlider .moon path {
+.themeSlider .sun svg{
+    fill: var(--color1light);
+}
+
+.themeSlider .moon svg {
     fill: var(--color2light);
 }
 

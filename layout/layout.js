@@ -197,8 +197,11 @@ const toggleTheme = function () {
     }
 };
 
+
 const closeBanner = function(){
     let banner = document.getElementsByClassName("banner")[0]
+
+    sessionStorage.setItem("bannerClosed", true);
 
     banner.classList.add("closed")
 }
@@ -247,5 +250,9 @@ void (async function () {
     } else {
         body.classList.add("light");
     }
+
+    if(sessionStorage.getItem("bannerClosed") === "true"){
+    closeBanner()
+}
 
 })();
