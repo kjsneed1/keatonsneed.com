@@ -80,10 +80,6 @@ svg.alt {
     fill: var(--color2light);
 }
 
-path.alt {
-    fill: var(--color2light);
-}
-
 .center {
     max-width: 1280px;
     margin: auto;
@@ -537,6 +533,7 @@ path.alt {
 
 .banner button svg{
     width: 16px;
+    height: 16px;
 }
 
 .banner.closed{
