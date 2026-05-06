@@ -46,7 +46,7 @@
     box-sizing: border-box;
 }
 
-::selection{
+::selection {
     background-color: var(--color1dark);
     color: white;
 }
@@ -77,6 +77,10 @@ svg {
 }
 
 svg.alt {
+    fill: var(--color2light);
+}
+
+path.alt {
     fill: var(--color2light);
 }
 
@@ -117,7 +121,6 @@ svg.alt {
     display: block;
     color: var(--text);
     text-decoration: none;
-    border: none;
     border: 1px solid transparent;
     transition: 0.2s;
     background-color: var(--color9);
@@ -412,14 +415,6 @@ svg.alt {
     right: 8px;
 }
 
-.themeSlider .sun svg{
-    fill: var(--color1light);
-}
-
-.themeSlider .moon svg {
-    fill: var(--color2light);
-}
-
 .headerButtons button:hover img {
     filter: drop-shadow(1px 3px 1px var(--shadow)) brightness(75%);
 }
@@ -460,12 +455,10 @@ svg.alt {
     scrollbar-width: thin;
 }
 
-.contentWidthForce{
+.contentWidthForce {
     max-width: 1200px;
     margin: auto;
 }
-
-
 
 .banner {
     background-color: var(--background);
@@ -509,7 +502,7 @@ svg.alt {
     color: var(--color2light);
 }
 
-.banner button{
+.banner button {
     width: 24px;
     height: 24px;
     border: none;
@@ -523,20 +516,20 @@ svg.alt {
     padding: 0px;
 }
 
-.banner:hover button{
+.banner:hover button {
     opacity: 100%;
 }
 
-.banner button:hover{
+.banner button:hover {
     background-color: var(--backgroundHover);
 }
 
-.banner button svg{
+.banner button svg {
     width: 16px;
     height: 16px;
 }
 
-.banner.closed{
+.banner.closed {
     border: none;
     height: 0;
 }
@@ -550,7 +543,7 @@ svg.alt {
     width: 100px;
 }
 
-.throughLine{
+.throughLine {
     height: 40px;
     width: 1px;
     background-color: var(--border);
@@ -587,7 +580,7 @@ svg.alt {
         padding: 20px 10px;
     }
 
-    .banner button{
+    .banner button {
         opacity: 100%;
     }
 }
