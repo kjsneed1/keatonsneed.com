@@ -297,6 +297,7 @@ path.alt {
     visibility: hidden;
     transition: visibility 0s;
     transition-delay: 0.15s;
+    user-select: none;
 }
 
 .themePopup.visible {
