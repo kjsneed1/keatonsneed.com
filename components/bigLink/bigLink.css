@@ -1,4 +1,4 @@
-.bigLink{
+.bigLink {
     display: inline-block;
     width: 240px;
     transition: 0.2s;
@@ -8,8 +8,8 @@
     text-decoration: none;
 }
 
-.bigLinkTop{
-    background-color: var(--color1dark); 
+.bigLinkTop {
+    background-color: var(--color1dark);
     height: 24px;
     border: 1px solid var(--border);
     border-bottom: none;
@@ -19,13 +19,14 @@
     text-shadow: 1px 3px 1.5px var(--shadow);
     font-size: 14pt;
     transition: 0.2s;
+    user-select: none;
 }
 
-.alt .bigLinkTop{
+.alt .bigLinkTop {
     background-color: var(--color2dark);
 }
 
-.bigLinkBottom{
+.bigLinkBottom {
     background-color: var(--color9);
     height: 80px;
     transition: 0.2s;
@@ -36,7 +37,7 @@
     margin: 0;
 }
 
-.bigLinkContent{
+.bigLinkContent {
     display: inline-block;
     padding: 5px;
     overflow: auto;
@@ -46,50 +47,50 @@
     transition: 0.2s;
 }
 
-.bigLinkImage{
+.bigLinkImage {
     width: 80px;
     background-color: var(--background);
     border-bottom-left-radius: 8px;
     border-right: 1px solid var(--border);
     transition: 0.2s;
-    flex:none;
+    flex: none;
     padding: 5px;
     align-content: center;
 }
 
-.bigLinkImage svg{
+.bigLinkImage svg {
     width: 45px;
-    margin: 0;;
+    margin: 0;
     transition: 0.2s;
 }
 
-.bigLink:hover{
+.bigLink:hover {
     filter: drop-shadow(0 0 3px var(--border));
+    cursor: var(--pointer), pointer;
 }
 
-.bigLink:hover .bigLinkTop{
+.bigLink:hover .bigLinkTop {
     background-color: var(--color1light);
 }
 
-.bigLink:hover.alt .bigLinkTop{
+.bigLink:hover.alt .bigLinkTop {
     background-color: var(--color2light);
 }
 
-.bigLink:hover .bigLinkBottom{
+.bigLink:hover .bigLinkBottom {
     background-color: var(--backgroundHover);
 }
 
-.bigLink:hover .bigLinkImage{
+.bigLink:hover .bigLinkImage {
     background-color: var(--color9);
 }
 
-.bigLink:hover .bigLinkImage svg{
-    width:55px;
+.bigLink:hover .bigLinkImage svg {
+    width: 55px;
 }
 
-
 @media only screen and (max-width: 768px) {
-    .bigLink{
+    .bigLink {
         display: block;
         width: 100%;
         margin: 0;

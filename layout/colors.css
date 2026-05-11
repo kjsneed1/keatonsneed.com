@@ -11,6 +11,8 @@
     --color9: #2e334b;
     --border: #6b7292;
     --shadow: #0c0c0cc0;
+    --cursor: url(/images/cursors/theme1/cursor-default.png);
+    --pointer: url(/images/cursors/theme1/cursor-pointer.png);
 }
 
 .dark {
@@ -38,6 +40,13 @@
     --color1light: #7db88e;
     --color2dark: #5bb1ae;
     --color2light: #79c7c5;
+    --cursor: url(/images/cursors/theme1/cursor-default.png);
+    --pointer: url(/images/cursors/theme1/cursor-pointer.png);
+}
+
+.light.theme1, .light .theme1{
+    --cursor: url(/images/cursors/theme1/cursor-default-light.png);
+    --pointer: url(/images/cursors/theme1/cursor-pointer-light.png);
 }
 
 .theme2 {
@@ -45,6 +54,13 @@
     --color1light: #bc7878;
     --color2dark: #bf8f54;
     --color2light: #c99e68;
+    --cursor: url(/images/cursors/theme2/cursor-default.png);
+    --pointer: url(/images/cursors/theme2/cursor-pointer.png);
+}
+
+.light.theme2, .light .theme2{
+    --cursor: url(/images/cursors/theme2/cursor-default-light.png);
+    --pointer: url(/images/cursors/theme2/cursor-pointer-light.png);
 }
 
 .theme3 {
@@ -52,6 +68,13 @@
     --color1light: #ab71bb;
     --color2dark: #c1588e;
     --color2light: #d77aaa;
+    --cursor: url(/images/cursors/theme3/cursor-default.png);
+    --pointer: url(/images/cursors/theme3/cursor-pointer.png);
+}
+
+.light.theme3, .light .theme3{
+    --cursor: url(/images/cursors/theme3/cursor-default-light.png);
+    --pointer: url(/images/cursors/theme3/cursor-pointer-light.png);
 }
 
 .theme4 {
@@ -59,6 +82,13 @@
     --color1light: #b3bd5b;
     --color2dark: #67b177;
     --color2light: #81bf8e;
+    --cursor: url(/images/cursors/theme4/cursor-default.png);
+    --pointer: url(/images/cursors/theme4/cursor-pointer.png);
+}
+
+.light.theme4, .light .theme4{
+    --cursor: url(/images/cursors/theme4/cursor-default-light.png);
+    --pointer: url(/images/cursors/theme4/cursor-pointer-light.png);
 }
 
 .theme5 {
@@ -66,6 +96,13 @@
     --color1light: #7fc0c6;
     --color2dark: #5b70b1;
     --color2light: #778bc5;
+    --cursor: url(/images/cursors/theme5/cursor-default.png);
+    --pointer: url(/images/cursors/theme5/cursor-pointer.png);
+}
+
+.light.theme5, .light .theme5{
+    --cursor: url(/images/cursors/theme5/cursor-default-light.png);
+    --pointer: url(/images/cursors/theme5/cursor-pointer-light.png);
 }
 
 .theme6 {
@@ -73,4 +110,11 @@
     --color1light: #7f7ccb;
     --color2dark: #9f4ab2;
     --color2light: #ae56c2;
+    --cursor: url(/images/cursors/theme6/cursor-default.png);
+    --pointer: url(/images/cursors/theme6/cursor-pointer.png);
+}
+
+.light.theme6, .light .theme6{
+    --cursor: url(/images/cursors/theme6/cursor-default-light.png);
+    --pointer: url(/images/cursors/theme6/cursor-pointer-light.png);
 }

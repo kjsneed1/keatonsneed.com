@@ -61,7 +61,7 @@ body {
         "MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
         Sans-serif;
     color: var(--text);
-    cursor: url(/images/cursor-default.png), auto;
+    cursor: var(--cursor), auto;
 }
 
 body.dark {
@@ -82,6 +82,14 @@ svg.alt {
 
 path.alt {
     fill: var(--color2light);
+}
+
+a:hover {
+    cursor: var(--pointer), pointer;
+}
+
+button:hover {
+    cursor: var(--pointer), pointer;
 }
 
 .center {
@@ -161,7 +169,7 @@ path.alt {
     transition: 0.25s;
     background-color: var(--backgroundHover);
     filter: drop-shadow(0 0 3px var(--border));
-    cursor: url("/images/cursor-default.png"), pointer;
+    cursor: var(--pointer), pointer;
 }
 
 .nav a:hover svg {
@@ -370,6 +378,7 @@ path.alt {
         var(--color1light) 40%,
         var(--color2light) 60%
     );
+    cursor: var(--pointer), pointer;
 }
 
 .themeSlider {
@@ -454,14 +463,14 @@ path.alt {
     overflow: auto;
 }
 
-@supports not selector(::-webkit-scrollbar){
-    .content{
+@supports not selector(::-webkit-scrollbar) {
+    .content {
         scrollbar-color: var(--color2dark) var(--color9);
         scrollbar-width: thin;
     }
 }
 
-@supports selector(::-webkit-scrollbar){
+@supports selector(::-webkit-scrollbar) {
     .content::-webkit-scrollbar {
         width: 5px;
         margin-top: 10px;
@@ -604,7 +613,7 @@ path.alt {
         padding: 20px 10px;
     }
 
-    @supports selector(::-webkit-scrollbar){
+    @supports selector(::-webkit-scrollbar) {
         .content::-webkit-scrollbar {
             width: 3px;
         }

@@ -49,6 +49,7 @@
 
 .mediumLink:hover {
     filter: drop-shadow(0 0 3px var(--border));
+    cursor: var(--pointer), pointer;
 }
 
 .mediumLink:hover .mediumLinkImage {
