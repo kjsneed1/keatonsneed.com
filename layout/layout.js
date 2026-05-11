@@ -39,8 +39,7 @@ const clickOffNav = function () {
 };
 
 const audio = {
-    select: [new Audio("/sounds/select1.ogg"),new Audio("/sounds/select2.ogg"),new Audio("/sounds/select3.ogg"),],
-    hover: new Audio("/sounds/hover.ogg"),
+    select: new Audio("/sounds/select.ogg"),
     mute: new Audio("/sounds/mute.ogg"),
     unmute: new Audio("/sounds/unmute.ogg"),
 };
@@ -221,7 +220,6 @@ void (async function () {
             `void(async ()=> await setRoute('${href}'))()`,
         );
         a.removeAttribute("href");
-        a.setAttribute("onmouseenter", "playSound('hover');");
     }
 
     document.getElementById("pageTitle").text = pageTitle;
