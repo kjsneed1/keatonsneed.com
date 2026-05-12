@@ -47,25 +47,27 @@
     width: fit-content;
 }
 
-.mediumLink:hover {
-    filter: drop-shadow(0 0 3px var(--border));
-    cursor: var(--pointer), pointer;
-}
+@media (hover: hover) and (pointer:fine) {
+    .mediumLink:hover {
+        filter: drop-shadow(0 0 3px var(--border));
+        cursor: var(--pointer), pointer;
+    }
 
-.mediumLink:hover .mediumLinkImage {
-    background-color: var(--color9);
-}
+    .mediumLink:hover .mediumLinkImage {
+        background-color: var(--color9);
+    }
 
-.mediumLink:hover .mediumLinkBottom {
-    background-color: var(--color1light);
-}
+    .mediumLink:hover .mediumLinkBottom {
+        background-color: var(--color1light);
+    }
 
-.mediumLink.alt:hover .mediumLinkBottom {
-    background-color: var(--color2light);
-}
+    .mediumLink.alt:hover .mediumLinkBottom {
+        background-color: var(--color2light);
+    }
 
-.mediumLink:hover .mediumLinkImage img {
-    width: 140px;
+    .mediumLink:hover .mediumLinkImage img {
+        width: 140px;
+    }
 }
 
 @media only screen and (max-width: 768px) {

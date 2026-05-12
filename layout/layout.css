@@ -1,5 +1,10 @@
 @import url("/layout/colors.css");
 
+@font-face {
+  font-family: pGothicInternal;
+  src: url(/fonts/ms-pgothic-regular.ttf);
+}
+
 @keyframes myAnimation {
     from {
         background-position: 0px 0px;
@@ -58,10 +63,11 @@ body {
     margin: 0px;
     align-content: center;
     font-family:
-        "MS PGothic", "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
+        "MS PGothic", pGothicInternal , "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
         Sans-serif;
     color: var(--text);
     cursor: var(--cursor), auto;
+    overflow: auto;
 }
 
 body.dark {
@@ -82,14 +88,6 @@ svg.alt {
 
 path.alt {
     fill: var(--color2light);
-}
-
-a:hover {
-    cursor: var(--pointer), pointer;
-}
-
-button:hover {
-    cursor: var(--pointer), pointer;
 }
 
 .center {
@@ -164,23 +162,6 @@ button:hover {
     margin-top: -5;
 }
 
-.nav a:hover {
-    border: solid 1px var(--border);
-    transition: 0.25s;
-    background-color: var(--backgroundHover);
-    filter: drop-shadow(0 0 3px var(--border));
-    cursor: var(--pointer), pointer;
-}
-
-.nav a:hover svg {
-    width: 22px;
-    height: 22px;
-}
-
-.nav a:hover div {
-    animation: hoverLink 1.2s infinite;
-}
-
 .nav a:active {
     filter: none;
     border: 1px solid transparent;
@@ -212,10 +193,6 @@ button:hover {
     height: 16px;
     margin: 0;
     transition: 0.2s;
-}
-
-.navToggleButton:hover {
-    background-color: var(--backgroundHover);
 }
 
 .welcome {
@@ -372,15 +349,6 @@ button:hover {
     display: inline-block;
 }
 
-.themePuck:hover {
-    background-image: linear-gradient(
-        45deg,
-        var(--color1light) 40%,
-        var(--color2light) 60%
-    );
-    cursor: var(--pointer), pointer;
-}
-
 .themeSlider {
     margin: auto;
     margin-top: 4px;
@@ -425,10 +393,6 @@ button:hover {
     right: 8px;
 }
 
-.headerButtons button:hover img {
-    filter: drop-shadow(1px 3px 1px var(--shadow)) brightness(75%);
-}
-
 .foot {
     height: 10px;
     background-image: linear-gradient(
@@ -471,17 +435,17 @@ button:hover {
 }
 
 @supports selector(::-webkit-scrollbar) {
-    .content::-webkit-scrollbar {
+    ::-webkit-scrollbar {
         width: 5px;
         margin-top: 10px;
     }
 
-    .content::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
         background: transparent;
         margin: 10px;
     }
 
-    .content::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
         background: var(--color2dark);
         border-radius: 100px;
         border-right: 3px solid transparent;
@@ -549,14 +513,6 @@ button:hover {
     padding: 0px;
 }
 
-.banner:hover button {
-    opacity: 100%;
-}
-
-.banner button:hover {
-    background-color: var(--backgroundHover);
-}
-
 .banner button svg {
     width: 16px;
     height: 16px;
@@ -572,10 +528,6 @@ button:hover {
     font-weight: lighter;
 }
 
-::-webkit-scrollbar:hover {
-    width: 100px;
-}
-
 .throughLine {
     height: 40px;
     width: 1px;
@@ -585,42 +537,55 @@ button:hover {
     margin-bottom: 0;
 }
 
-@media only screen and (max-width: 768px) {
-    .center {
-        padding: 5px;
-        height: 100%;
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        cursor: var(--pointer), pointer;
     }
 
-    .nav {
-        width: 0px;
-        border-right: none;
-        z-index: 2;
-        height: calc(100vh - 52px);
-        transition-delay: 0s, 0.5s;
-        filter: drop-shadow(0 0 10px var(--shadow));
+    button:hover {
+        cursor: var(--pointer), pointer;
     }
 
-    .navContainer {
-        animation: navClose 0s linear forwards;
-        animation-delay: 0.5s;
+    .nav a:hover {
+        border: solid 1px var(--border);
+        transition: 0.25s;
+        background-color: var(--backgroundHover);
+        filter: drop-shadow(0 0 3px var(--border));
+        cursor: var(--pointer), pointer;
     }
 
-    .navToggleButton {
-        display: inline;
+    .nav a:hover svg {
+        width: 22px;
+        height: 22px;
     }
 
-    .content {
-        padding: 20px 10px;
+    .nav a:hover div {
+        animation: hoverLink 1.2s infinite;
     }
 
-    @supports selector(::-webkit-scrollbar) {
-        .content::-webkit-scrollbar {
-            width: 3px;
-        }
+    .navToggleButton:hover {
+        background-color: var(--backgroundHover);
     }
 
-    .banner button {
+    .themePuck:hover {
+        background-image: linear-gradient(
+            45deg,
+            var(--color1light) 40%,
+            var(--color2light) 60%
+        );
+        cursor: var(--pointer), pointer;
+    }
+
+    .headerButtons button:hover img {
+        filter: drop-shadow(1px 3px 1px var(--shadow)) brightness(75%);
+    }
+
+    .banner:hover button {
         opacity: 100%;
+    }
+
+    .banner button:hover {
+        background-color: var(--backgroundHover);
     }
 }
 
@@ -638,15 +603,13 @@ button:hover {
 }
 
 .fullscreen .foot {
-    border-radius: 0;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
+    display: none;
 }
 
 .fullscreen .nav {
     border-left: none;
-    height: calc(100vh - 42px);
+    border-bottom: none;
+    height: calc(100vh - 32px);
     transition:
         width 0.5s,
         height 0s;
@@ -655,4 +618,83 @@ button:hover {
 
 .fullscreen .main {
     border-right: none;
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .center {
+        max-width: 100%;
+        padding: 0px;
+        height: 100%;
+    }
+
+    .welcome {
+        border-radius: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    .nav {
+        width: 0px;
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+        z-index: 2;
+        height: calc(100vh - 32px);
+        transition-delay: 0s, 0.5s;
+        filter: drop-shadow(0 0 10px var(--shadow));
+    }
+
+    .fullscreen .nav {
+        height: calc(100vh - 32px);
+    }
+
+    .navContainer {
+        animation: navClose 0s linear forwards;
+        animation-delay: 0.5s;
+    }
+
+    .navToggleButton {
+        display: inline;
+    }
+
+    .main{
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .myflex {
+        border-bottom: none;
+    }
+
+    .content {
+        padding: 45px 10px;
+    }
+
+    .foot {
+        display: none;
+    }
+
+    @supports selector(::-webkit-scrollbar) {
+        .content::-webkit-scrollbar {
+            width: 3px;
+        }
+    }
+
+    .banner button {
+        opacity: 100%;
+    }
+
+    #fullscreenButton {
+        display: none;
+    }
+
+    .headerButtons {
+        width: 90px;
+    }
+
+    .headerTime {
+        width: 90px;
+    }
 }

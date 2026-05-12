@@ -89,32 +89,16 @@ h2{
   transition: 0.25s;
 }
 
-.favCard a:hover{
-  color: var(--color1dark);
-}
-
 .favCard:nth-of-type(odd) a{
   color: var(--color2light);
-}
-
-.favCard:nth-of-type(odd) a:hover{
-  color: var(--color2dark);
 }
 
 .light .favCard a{
   color: var(--color1dark);
 }
 
-.light .favCard a:hover{
-  color: var(--color1light);
-}
-
 .light .favCard:nth-of-type(odd) a{
   color: var(--color2dark);
-}
-
-.light .favCard:nth-of-type(odd) a:hover{
-  color: var(--color2light);
 }
 
 
@@ -147,6 +131,24 @@ ol{
 
 .favCard:nth-of-type(odd) svg{
   fill:var(--color2light);
+}
+
+@media (hover: hover) and (pointer:fine) {
+  .favCard a:hover{
+    color: var(--color1dark);
+  }
+
+  .favCard:nth-of-type(odd) a:hover{
+    color: var(--color2dark);
+  }
+
+  .light .favCard a:hover{
+    color: var(--color1light);
+  }
+
+  .light .favCard:nth-of-type(odd) a:hover{
+    color: var(--color2light);
+  }
 }
 
 @media only screen and (max-width: 768px) {

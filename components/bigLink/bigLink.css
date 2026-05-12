@@ -63,30 +63,31 @@
     margin: 0;
     transition: 0.2s;
 }
+@media (hover: hover) and (pointer:fine) {
+    .bigLink:hover {
+        filter: drop-shadow(0 0 3px var(--border));
+        cursor: var(--pointer), pointer;
+    }
 
-.bigLink:hover {
-    filter: drop-shadow(0 0 3px var(--border));
-    cursor: var(--pointer), pointer;
-}
+    .bigLink:hover .bigLinkTop {
+        background-color: var(--color1light);
+    }
 
-.bigLink:hover .bigLinkTop {
-    background-color: var(--color1light);
-}
+    .bigLink:hover.alt .bigLinkTop {
+        background-color: var(--color2light);
+    }
 
-.bigLink:hover.alt .bigLinkTop {
-    background-color: var(--color2light);
-}
+    .bigLink:hover .bigLinkBottom {
+        background-color: var(--backgroundHover);
+    }
 
-.bigLink:hover .bigLinkBottom {
-    background-color: var(--backgroundHover);
-}
+    .bigLink:hover .bigLinkImage {
+        background-color: var(--color9);
+    }
 
-.bigLink:hover .bigLinkImage {
-    background-color: var(--color9);
-}
-
-.bigLink:hover .bigLinkImage svg {
-    width: 55px;
+    .bigLink:hover .bigLinkImage svg {
+        width: 55px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
