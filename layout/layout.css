@@ -65,6 +65,7 @@ body {
     font-family:
         "MS PGothic", pGothicInternal , "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
         Sans-serif;
+    font-size: 13pt;
     color: var(--text);
     cursor: var(--cursor), auto;
     overflow: auto;
@@ -130,7 +131,6 @@ path.alt {
     border: 1px solid transparent;
     transition: 0.2s;
     background-color: var(--color9);
-    font-size: 12pt;
     padding: 5px;
     margin: 5px;
     user-select: none;
@@ -213,6 +213,7 @@ path.alt {
     z-index: 3;
     display: flex;
     text-shadow: 1px 3px 1.5px var(--shadow);
+    transition: 0.5s;
 }
 
 .welcome h1 {
@@ -421,7 +422,7 @@ path.alt {
 
 .content {
     background-color: var(--backgroundClear);
-    padding: 20px;
+    padding: 30px 20px;
     height: 100%;
     text-align: center;
     overflow: auto;
@@ -587,6 +588,10 @@ path.alt {
     .banner button:hover {
         background-color: var(--backgroundHover);
     }
+
+    .themeSlider:hover {
+        cursor: var(--pointer), pointer;
+    }
 }
 
 .center.fullscreen {
@@ -633,6 +638,13 @@ path.alt {
         border-top: none;
         border-left: none;
         border-right: none;
+        height: 40px;
+        align-items: center;
+    }
+
+    .welcome h1 {
+        font-size: 17pt;
+        margin-top: 0;
     }
 
     .nav {
@@ -641,18 +653,59 @@ path.alt {
         border-left: none;
         border-bottom: none;
         z-index: 2;
-        height: calc(100vh - 32px);
+        height: calc(100vh - 40px);
         transition-delay: 0s, 0.5s;
         filter: drop-shadow(0 0 10px var(--shadow));
     }
 
     .fullscreen .nav {
-        height: calc(100vh - 32px);
+        height: calc(100vh - 40px);
     }
 
     .navContainer {
         animation: navClose 0s linear forwards;
         animation-delay: 0.5s;
+    }
+
+    .themePopup {
+        transform: translate(-80px, 0%);
+    }
+
+    .themeArrowOutline {
+        transform: translate(38px, 0);
+    }
+
+    .themeTop {
+        width: 120px;
+    }
+
+    .themeBox {
+        width: 120px;
+        height: 120px;
+    }
+
+    .themePuck {
+        width: 28px;
+        height: 28px;
+    }
+
+    .themeSlider {
+        width: 80px;
+        height: 30px;
+    }
+
+    .themeSliderPuck {
+        width: 40px;
+    }
+
+    .light .themeSliderPuck {
+        margin-left: 38px;
+    }
+
+    .themeSlider svg {
+        width: 18px;
+        height: 18px;
+        margin: 1px 2px;
     }
 
     .navToggleButton {
@@ -696,5 +749,9 @@ path.alt {
 
     .headerTime {
         width: 90px;
+    }
+
+    .headerButtons img {
+        width: 16px;
     }
 }
