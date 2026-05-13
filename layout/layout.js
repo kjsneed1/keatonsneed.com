@@ -10,7 +10,7 @@ let navOpen = isWide.matches;
 
 const navToggle = function () {
     if (!navOpen) {
-        document.getElementsByClassName("nav")[0].style.width = "160px";
+        document.getElementsByClassName("nav")[0].style.width = "166px";
         document.getElementsByClassName("nav")[0].style.borderRight =
             "1px solid var(--border)";
     } else {
@@ -90,16 +90,40 @@ const setRoute = async function (route, pop = false) {
         document.getElementsByTagName("HEAD")[0].appendChild(script);
     }
 
-    document.getElementsByClassName("contentWidthForce")[0].innerHTML = "";
+    let contentHolder = document.getElementsByClassName("contentWidthForce")[0]
+
+    contentHolder.innerHTML = "";
 
     const contents = newContent.querySelectorAll(":not(script).important");
 
     for (let c of contents) {
-        document.getElementsByClassName("contentWidthForce")[0].appendChild(c);
+        contentHolder.appendChild(c);
     }
+
+    let content = document.getElementsByClassName("content")[0]
+
+    content.scrollTop = 0;
+
+    contentHolder.scrollTop = 0;
 
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
+
+    const currentSelected = document.getElementsByClassName("selected")[0]
+    
+    if(currentSelected !== undefined){
+        currentSelected.classList.remove("selected")
+    }
+
+    let linkId = location.pathname.split("/")[1]
+
+    if (linkId === "" || linkId === undefined){
+        linkId = "home"
+    }
+
+    let link = document.getElementById(linkId)
+
+    link.classList.add("selected")
 
     clickOffNav();
 };
@@ -224,6 +248,17 @@ void (async function () {
 
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
+
+    let firstLinkId = location.pathname.split("/")[1]
+
+    if(firstLinkId === "" || firstLinkId === undefined){
+        firstLinkId = "home"
+    }
+
+    const firstLink = document.getElementById(firstLinkId)
+
+    firstLink.classList.add("selected")
+
 
     const muteIcon = document.getElementById("muteIcon");
     const fullscreenIcon = document.getElementById("fullscreenIcon");
