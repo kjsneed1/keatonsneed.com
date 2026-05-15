@@ -8,7 +8,7 @@
     user-select: none;
 }
 
-.mediumLinkImage {
+.mediumLink div:first-child {
     height: 140px;
     width: 140px;
     background-color: var(--background);
@@ -20,13 +20,13 @@
     align-content: center;
 }
 
-.mediumLinkImage img {
+.mediumLink img {
     vertical-align: center;
     width: 120px;
     transition: 0.2s;
 }
 
-.mediumLinkBottom {
+.mediumLink div:last-child {
     background-color: var(--color1dark);
     color: white;
     border: solid 1px var(--border);
@@ -39,7 +39,7 @@
     transition: 0.2s;
 }
 
-.alt .mediumLinkBottom {
+.mediumLink:nth-child(even) div:last-child {
     background-color: var(--color2dark);
 }
 
@@ -54,19 +54,19 @@
         cursor: var(--pointer), pointer;
     }
 
-    .mediumLink:hover .mediumLinkImage {
-        background-color: var(--color9);
+    .mediumLink:hover div:first-child {
+        background-color: var(--altBackground);
     }
 
-    .mediumLink:hover .mediumLinkBottom {
+    .mediumLink:hover div:last-child {
         background-color: var(--color1light);
     }
 
-    .mediumLink.alt:hover .mediumLinkBottom {
+    .mediumLink:nth-child(even):hover div:last-child {
         background-color: var(--color2light);
     }
 
-    .mediumLink:hover .mediumLinkImage img {
+    .mediumLink:hover img {
         width: 140px;
     }
 }

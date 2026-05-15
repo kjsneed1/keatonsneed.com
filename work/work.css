@@ -1,11 +1,23 @@
-.section{
+.section {
     width: 100%;
     background-color: var(--background);
     border: 1px solid var(--border);
     border-radius: 8px;
 }
 
-.sectionTop{
+@supports not selector(::-webkit-scrollbar) {
+    .section:nth-of-type(4n + 1){
+        scrollbar-color: var(--color1dark) var(--altBackground);
+    }
+}
+
+@supports selector(::-webkit-scrollbar) {
+    .section:nth-of-type(4n + 1) ::-webkit-scrollbar-thumb {
+        background: var(--color1dark);
+    }
+}
+
+.section > div:first-child {
     color: white;
     background-color: var(--color1dark);
     border-top-left-radius: 7px;
@@ -17,24 +29,22 @@
     text-shadow: 1px 3px 1.5px var(--shadow);
 }
 
-.alt .sectionTop{
+.section:nth-of-type(4n - 1) > div:first-child {
     background-color: var(--color2dark);
 }
 
-.sectionMain{
+.section > div:last-child {
     height: 200px;
     display: flex;
     flex-direction: row;
-    scrollbar-color: (--color1dark) var(--color9);
 }
 
-.alt .sectionMain{
+.section:nth-of-type(4n - 1) > div:last-child {
     flex-direction: row-reverse;
-    scrollbar-color: (--color2dark) var(--color9);
 }
 
-.sectionImage{
-    background-color: var(--color9);
+.section > div:last-child > div:first-child {
+    background-color: var(--altBackground);
     height: 100%;
     width: 30%;
     min-width: 200px;
@@ -43,74 +53,82 @@
     align-content: center;
 }
 
-.alt .sectionImage{
+.section:nth-of-type(4n - 1) > div:last-child > div:first-child {
     border-right: none;
     border-left: 1px solid var(--border);
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 7px;
 }
 
-.sectionImage img{
+.section img {
     width: 100%;
     max-width: 240px;
 }
 
-.sectionContent{
+.section > div:last-child > div:last-child {
     width: 70%;
     height: 100%;
     padding: 0px 10px;
     text-align: left;
-    scrollbar-color: (--color1dark) var(--color9);
     overflow: auto;
 }
 
-.sectionContent h2{
+.section h2 {
     font-size: 16pt;
     margin-top: 8px;
     margin-bottom: 2px;
     font-weight: bold;
 }
 
-.sectionContent h4{
+.section h4 {
     margin-top: 0px;
     margin-bottom: 2px;
     font-weight: lighter;
     color: var(--color1light);
 }
 
-.light .sectionContent h4 {
+.light .section h4 {
     color: var(--color1dark);
 }
 
-.alt .sectionContent h4 {
+.section:nth-of-type(4n - 1) h4 {
     color: var(--color2light);
 }
 
-.light .alt .sectionContent h4{
-    color: var(--color2dark)
+.light .section:nth-of-type(4n - 1) h4 {
+    color: var(--color2dark);
 }
 
-.sectionContent ul{
+.section ul {
     margin-top: 8px;
 }
 
-.sectionContent li{
+.section li {
     margin-left: -20px;
     margin-bottom: 4px;
 }
 
+.throughLine {
+    height: 40px;
+    width: 1px;
+    background-color: var(--border);
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 @media only screen and (max-width: 768px) {
-    .sectionMain{
+    .section > div:last-child {
         flex-direction: column-reverse;
         height: fit-content;
         position: relative;
     }
 
-    .alt .sectionMain{
+    .section:nth-of-type(4n - 1) > div:last-child {
         flex-direction: column-reverse;
     }
 
-    .sectionImage{
+    .section > div:last-child > div:first-child {
         width: 120px;
         min-width: 100px;
         border-top: solid 1px var(--border);
@@ -120,7 +138,7 @@
         position: absolute;
     }
 
-    .alt .sectionImage{
+    .section:nth-of-type(4n - 1) > div:last-child > div:first-child {
         border-left: none;
         border-top-right-radius: 0px;
         border-top-left-radius: 8px;
@@ -128,12 +146,12 @@
         right: 0;
     }
 
-    .sectionImage img{
+    .section img {
         width: 100px;
         margin-top: -8px;
     }
 
-    .sectionContent{
+    .section > div:last-child > div:last-child {
         width: 100%;
         padding-bottom: 50px;
     }

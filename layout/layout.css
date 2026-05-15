@@ -113,7 +113,7 @@ path.alt {
 
 .nav {
     border: solid 1px var(--border);
-    background-color: var(--color9);
+    background-color: var(--altBackground);
     width: 166px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -130,7 +130,7 @@ path.alt {
     text-decoration: none;
     border: 1px solid transparent;
     transition: 0.2s;
-    background-color: var(--color9);
+    background-color: var(--altBackground);
     padding: 5px;
     margin: 5px;
     user-select: none;
@@ -346,7 +346,7 @@ path.alt {
 .themeBox {
     width: 100px;
     height: 100px;
-    background-color: var(--color9);
+    background-color: var(--altBackground);
     border: 1px solid var(--border);
     transform: translate(0, -1px);
     border-bottom-left-radius: 8px;
@@ -449,7 +449,7 @@ path.alt {
 
 @supports not selector(::-webkit-scrollbar) {
     .content {
-        scrollbar-color: var(--color2dark) var(--color9);
+        scrollbar-color: var(--color2dark) var(--altBackground);
         scrollbar-width: thin;
     }
 }
@@ -524,7 +524,7 @@ path.alt {
     height: 24px;
     border: none;
     border-left: 1px solid var(--border);
-    background-color: var(--color9);
+    background-color: var(--altBackground);
     z-index: 3;
     position: absolute;
     right: 0;
@@ -546,15 +546,6 @@ path.alt {
 .content h1 {
     text-decoration: underline var(--color2dark);
     font-weight: lighter;
-}
-
-.throughLine {
-    height: 40px;
-    width: 1px;
-    background-color: var(--border);
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {

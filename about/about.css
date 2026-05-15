@@ -116,7 +116,7 @@ ol{
 
 .favCard svg{
   position: absolute;
-  background-color: var(--color9);
+  background-color: var(--altBackground);
   width: 60px;
   height: 60px;
   padding: 10px;
