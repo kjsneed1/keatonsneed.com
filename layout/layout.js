@@ -224,10 +224,12 @@ const toggleTheme = function () {
 const closeBanner = function(){
     let banner = document.getElementsByClassName("banner")[0]
 
-    sessionStorage.setItem("bannerClosed", true);
+    localStorage.setItem("bannerClosed", bannerString);
 
     banner.classList.add("closed")
 }
+
+let bannerString = ""
 
 void (async function () {
     const layout = document.createElement("html");
@@ -284,7 +286,9 @@ void (async function () {
         body.classList.add("light");
     }
 
-    if(sessionStorage.getItem("bannerClosed") === "true"){
+    bannerString = btoa(document.getElementsByClassName("banner")[0].innerText)
+
+    if(localStorage.getItem("bannerClosed") === bannerString){
     closeBanner()
 }
 

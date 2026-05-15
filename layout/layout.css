@@ -135,22 +135,26 @@ path.alt {
     margin: 5px;
     user-select: none;
     width: 154px;
+    height: 40px;
 }
 
 .nav a div {
     display: inline-block;
-    align-content: center;
-    height: 100%;
+    align-content: top;
+    height: 16px;
     padding: 0;
-    vertical-align: super;
+    vertical-align: top;
+    transition: height 0.2s;
+    margin-top: 2px;
 }
 
 .nav a svg {
     width: 16px;
     height: 16px;
     margin-right: 8px;
-    vertical-align: top;
+    vertical-align: center;
     transition: 0.2s;
+    margin-top: 2px;
 }
 
 .nav a object {
@@ -198,6 +202,10 @@ path.alt {
 .nav a.selected{
   background-color: var(--backgroundHover);
   border: 1px solid var(--border);
+}
+
+.nav a.selected div{
+    height: 22px;
 }
 
 .nav a.selected svg{
@@ -262,7 +270,7 @@ path.alt {
     width: 14px;
     filter: drop-shadow(1px 3px 1px var(--shadow));
     vertical-align: top;
-    transition: 0.25s;
+    transition: 0.2s;
     margin: 0px 3px;
 }
 
@@ -484,7 +492,7 @@ path.alt {
     min-width: fit-content;
     display: inline-block;
     overflow: hidden;
-    animation: bannerSlide 10s linear infinite;
+    animation: bannerSlide 15s linear infinite;
     text-wrap: nowrap;
     z-index: 1;
     position: absolute;
@@ -499,11 +507,11 @@ path.alt {
     min-width: fit-content;
     display: inline-block;
     overflow: hidden;
-    animation: bannerSlide 10s linear infinite;
+    animation: bannerSlide 15s linear infinite;
     text-wrap: nowrap;
     z-index: 2;
     position: absolute;
-    animation-delay: 5s;
+    animation-delay: 7.5s;
     margin-left: -400px;
     margin-top: 3px;
 }
@@ -521,7 +529,7 @@ path.alt {
     position: absolute;
     right: 0;
     opacity: 0%;
-    transition: 0.25s;
+    transition: 0.2s;
     padding: 0px;
 }
 
@@ -560,7 +568,7 @@ path.alt {
 
     .nav a:hover {
         border: solid 1px var(--border);
-        transition: 0.25s;
+        transition: 0.2s;
         background-color: var(--backgroundHover);
         filter: drop-shadow(0 0 3px var(--border));
         cursor: var(--pointer), pointer;
@@ -573,6 +581,7 @@ path.alt {
 
     .nav a:hover div {
         animation: hoverLink 1.2s infinite;
+        height: 22px;
     }
 
     .navToggleButton:hover {

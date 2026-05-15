@@ -3,8 +3,9 @@
     width: fit-content;
     height: fit-content;
     margin: 20px;
-    transition: 0.25s;
+    transition: 0.2s;
     text-decoration: none;
+    user-select: none;
 }
 
 .mediumLinkImage {
@@ -15,14 +16,14 @@
     border-bottom: none;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    transition: 0.25s;
+    transition: 0.2s;
     align-content: center;
 }
 
 .mediumLinkImage img {
     vertical-align: center;
     width: 120px;
-    transition: 0.25s;
+    transition: 0.2s;
 }
 
 .mediumLinkBottom {
@@ -35,7 +36,7 @@
     align-content: center;
     text-shadow: 1px 3px 1.5px var(--shadow);
     font-size: 14pt;
-    transition: 0.25s;
+    transition: 0.2s;
 }
 
 .alt .mediumLinkBottom {

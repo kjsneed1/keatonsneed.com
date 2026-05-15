@@ -86,7 +86,7 @@ h2{
 
 .favCard a{
   color: var(--color1light);
-  transition: 0.25s;
+  transition: 0.2s;
 }
 
 .favCard:nth-of-type(odd) a{

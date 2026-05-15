@@ -98,32 +98,6 @@
     margin-left: -20px;
     margin-bottom: 4px;
 }
-/*
-@supports not selector(::-webkit-scrollbar) {
-    .sectionContent {
-        scrollbar-color: var(--color2dark) var(--color9);
-        scrollbar-width: thin;
-    }
-}
-
-@supports selector(::-webkit-scrollbar) {
-
-    .sectionContent::-webkit-scrollbar {
-        width: 5px;
-        margin-top: 10px;
-    }
-
-    .sectionContent::-webkit-scrollbar-track {
-        background: transparent;
-        margin: 10px;
-    }
-
-    .sectionContent::-webkit-scrollbar-thumb {
-        background: var(--color2dark);
-        border-radius: 100px;
-        border-right: 3px solid transparent;
-    }
-}*/
 
 @media only screen and (max-width: 768px) {
     .sectionMain{
