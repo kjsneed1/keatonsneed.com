@@ -42,23 +42,26 @@ const audio = {
     select: new Audio("/sounds/select.ogg"),
     mute: new Audio("/sounds/mute.ogg"),
     unmute: new Audio("/sounds/unmute.ogg"),
+    paint: new Audio("/sounds/paint.ogg"),
+    lightMode: new Audio("/sounds/lightMode.ogg"),
+    darkMode: new Audio("/sounds/darkMode.ogg"),
+    expand: new Audio("/sounds/expand.ogg"),
+    compress: new Audio("/sounds/compress.ogg"),
 };
 
 let muted = localStorage.getItem("muted") === "true" || false;
 
 const playSound = function (sound) {
     if (!muted) {
-        if(Array.isArray(audio[sound])){
+        if (Array.isArray(audio[sound])) {
             let sChoice = Math.floor(Math.random() * audio[sound].length);
 
             audio[sound][sChoice].currentTime = 0;
             audio[sound][sChoice].play();
-        }
-        else{
+        } else {
             audio[sound].currentTime = 0;
             audio[sound].play();
         }
-        
     }
 };
 
@@ -90,7 +93,7 @@ const setRoute = async function (route, pop = false) {
         document.getElementsByTagName("HEAD")[0].appendChild(script);
     }
 
-    let contentHolder = document.getElementsByClassName("contentWidthForce")[0]
+    let contentHolder = document.getElementsByClassName("contentWidthForce")[0];
 
     contentHolder.innerHTML = "";
 
@@ -100,7 +103,7 @@ const setRoute = async function (route, pop = false) {
         contentHolder.appendChild(c);
     }
 
-    let content = document.getElementsByClassName("content")[0]
+    let content = document.getElementsByClassName("content")[0];
 
     content.scrollTop = 0;
 
@@ -109,21 +112,21 @@ const setRoute = async function (route, pop = false) {
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
 
-    const currentSelected = document.getElementsByClassName("selected")[0]
-    
-    if(currentSelected !== undefined){
-        currentSelected.classList.remove("selected")
+    const currentSelected = document.getElementsByClassName("selected")[0];
+
+    if (currentSelected !== undefined) {
+        currentSelected.classList.remove("selected");
     }
 
-    let linkId = location.pathname.split("/")[1]
+    let linkId = location.pathname.split("/")[1];
 
-    if (linkId === "" || linkId === undefined){
-        linkId = "home"
+    if (linkId === "" || linkId === undefined) {
+        linkId = "home";
     }
 
-    let link = document.getElementById(linkId)
+    let link = document.getElementById(linkId);
 
-    link.classList.add("selected")
+    link.classList.add("selected");
 
     clickOffNav();
 };
@@ -135,13 +138,12 @@ onpopstate = (event) => {
 };
 
 const handleMute = function () {
-
     if (muted) {
         muted = false;
-        playSound("unmute")
+        playSound("unmute");
         muteIcon.src = "/icons/volume.svg";
     } else {
-        playSound("mute")
+        playSound("mute");
         muted = true;
         muteIcon.src = "/icons/volume-slash.svg";
     }
@@ -159,9 +161,11 @@ const handleFullscreen = function () {
     if (fullscreen) {
         center.classList.add("fullscreen");
         fullscreenIcon.src = "/icons/compress.svg";
+        playSound("expand");
     } else {
         center.classList.remove("fullscreen");
         fullscreenIcon.src = "/icons/expand.svg";
+        playSound("compress");
     }
 };
 
@@ -195,41 +199,43 @@ const setTheme = function (t) {
     localStorage.setItem("theme", t);
 
     theme = t;
+
+    playSound("paint");
 };
 
 let darkTheme;
-const darkThemeStorage = localStorage.getItem("darkTheme")
+const darkThemeStorage = localStorage.getItem("darkTheme");
 
-if(darkThemeStorage === "false"){
-    darkTheme = false
-}
-else{
-    darkTheme = true
+if (darkThemeStorage === "false") {
+    darkTheme = false;
+} else {
+    darkTheme = true;
 }
 
 const toggleTheme = function () {
     darkTheme = !darkTheme;
-    localStorage.setItem("darkTheme",darkTheme)
+    localStorage.setItem("darkTheme", darkTheme);
 
     if (darkTheme) {
         body.classList.remove("light");
         body.classList.add("dark");
+        playSound("darkMode");
     } else {
         body.classList.remove("dark");
         body.classList.add("light");
+        playSound("lightMode");
     }
 };
 
-
-const closeBanner = function(){
-    let banner = document.getElementsByClassName("banner")[0]
+const closeBanner = function () {
+    let banner = document.getElementsByClassName("banner")[0];
 
     localStorage.setItem("bannerClosed", bannerString);
 
-    banner.classList.add("closed")
-}
+    banner.classList.add("closed");
+};
 
-let bannerString = ""
+let bannerString = "";
 
 void (async function () {
     const layout = document.createElement("html");
@@ -237,7 +243,9 @@ void (async function () {
     document.body.appendChild(layout);
 
     let content = document.querySelector("div.important");
-    document.getElementsByClassName("contentWidthForce")[0].appendChild(content);
+    document
+        .getElementsByClassName("contentWidthForce")[0]
+        .appendChild(content);
     const navButtons = document.getElementsByClassName("nav")[0].children;
     for (let a of navButtons) {
         const href = a.href;
@@ -251,16 +259,15 @@ void (async function () {
     document.getElementById("pageTitle").text = pageTitle;
     document.getElementById("headerTitle").textContent = pageTitle;
 
-    let firstLinkId = location.pathname.split("/")[1]
+    let firstLinkId = location.pathname.split("/")[1];
 
-    if(firstLinkId === "" || firstLinkId === undefined){
-        firstLinkId = "home"
+    if (firstLinkId === "" || firstLinkId === undefined) {
+        firstLinkId = "home";
     }
 
-    const firstLink = document.getElementById(firstLinkId)
+    const firstLink = document.getElementById(firstLinkId);
 
-    firstLink.classList.add("selected")
-
+    firstLink.classList.add("selected");
 
     const muteIcon = document.getElementById("muteIcon");
     const fullscreenIcon = document.getElementById("fullscreenIcon");
@@ -286,10 +293,9 @@ void (async function () {
         body.classList.add("light");
     }
 
-    bannerString = btoa(document.getElementsByClassName("banner")[0].innerText)
+    bannerString = btoa(document.getElementsByClassName("banner")[0].innerText);
 
-    if(localStorage.getItem("bannerClosed") === bannerString){
-    closeBanner()
-}
-
+    if (localStorage.getItem("bannerClosed") === bannerString) {
+        closeBanner();
+    }
 })();
