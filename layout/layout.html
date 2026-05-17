@@ -11,10 +11,10 @@
 <body id="body">
     <audio src="/music/silence.mp3" autoplay loop></audio>
     <div class="center">
-        <div class="welcome">
-            <div class="headerTime"></div>
+        <div class="header">
+            <div></div>
             <h1 id="headerTitle">{headerTitle}</h1>
-            <div class="headerButtons">
+            <div>
                 <button onclick="handleMute()">
                     <img id="muteIcon" src="/icons/volume.svg" />
                 </button>
@@ -79,7 +79,7 @@
                 </button>
                 <div class="nav">
                     <a id="home" href="/"
-                        ><svg class="alt">
+                        ><svg>
                             <use href="/icons/home.svg#home-icon" />
                         </svg>
                         <div>
@@ -91,7 +91,7 @@
                         <div>About</div>
                     </a>
                     <a id="findMe" href="/findMe/"
-                        ><svg class="alt">
+                        ><svg>
                             <use href="/icons/loupe.svg#loupe-icon" />
                         </svg>
                         <div>Find Me</div>
@@ -108,13 +108,13 @@
             <div class="main" onclick="clickOffNav()">
                 <div class="banner">
                     <div class="bannerMessage1">
-                        <b>UPDATE!</b> This is a test message!
+                        <b>UPDATE!</b> This is a test message !
                     </div>
                     <div class="bannerMessage2">
                         <b>UPDATE!</b> This is a test message!
                     </div>
                     <button onclick="closeBanner()">
-                        <svg class="alt">
+                        <svg>
                             <use
                                 href="/icons/cross-small.svg#cross-small-icon" />
                         </svg>

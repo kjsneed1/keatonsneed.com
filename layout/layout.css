@@ -130,7 +130,7 @@ path.alt {
     text-decoration: none;
     border: 1px solid transparent;
     transition: 0.2s;
-    background-color: var(--altBackground);
+    background-color: transparent;
     padding: 5px;
     margin: 5px;
     user-select: none;
@@ -155,6 +155,10 @@ path.alt {
     vertical-align: center;
     transition: 0.2s;
     margin-top: 2px;
+}
+
+.nav a:nth-child(odd) svg {
+    fill: var(--color2light);
 }
 
 .nav a object {
@@ -213,7 +217,7 @@ path.alt {
   height: 22px;
 }
 
-.welcome {
+.header {
     color: white;
     background-image: linear-gradient(
         to right,
@@ -234,7 +238,7 @@ path.alt {
     transition: 0.5s;
 }
 
-.welcome h1 {
+.header h1 {
     font-size: 16pt;
     margin: 0;
     margin-top: 3px;
@@ -244,13 +248,13 @@ path.alt {
     vertical-align: top;
 }
 
-.headerTime {
+.header > div:first-child {
     margin: 5px 5px;
     width: 100px;
     flex: none;
 }
 
-.headerButtons {
+.header > div:last-child {
     margin: 0px 5px;
     width: 110px;
     flex: none;
@@ -258,7 +262,7 @@ path.alt {
     user-select: none;
 }
 
-.headerButtons button {
+.header > div:last-child button {
     display: inline-block;
     margin: 0px;
     border: none;
@@ -266,7 +270,7 @@ path.alt {
     height: 100%;
 }
 
-.headerButtons img {
+.header > div:last-child img {
     width: 14px;
     filter: drop-shadow(1px 3px 1px var(--shadow));
     vertical-align: top;
@@ -488,34 +492,29 @@ path.alt {
     transition: 0.5s;
 }
 
-.bannerMessage1 {
+.banner > div{
     min-width: fit-content;
     display: inline-block;
     overflow: hidden;
-    animation: bannerSlide 15s linear infinite;
     text-wrap: nowrap;
     z-index: 1;
     position: absolute;
     margin-left: -400px;
     margin-top: 3px;
+    animation: bannerSlide 15s linear infinite;
 }
-.bannerMessage1 b {
+
+.banner > div:last-of-type {
+    animation-delay: 7.5s;
+}
+
+
+.banner b {
     color: var(--color1light);
 }
 
-.bannerMessage2 {
-    min-width: fit-content;
-    display: inline-block;
-    overflow: hidden;
-    animation: bannerSlide 15s linear infinite;
-    text-wrap: nowrap;
-    z-index: 2;
-    position: absolute;
-    animation-delay: 7.5s;
-    margin-left: -400px;
-    margin-top: 3px;
-}
-.bannerMessage2 b {
+
+.banner > div:last-of-type b {
     color: var(--color2light);
 }
 
@@ -536,6 +535,7 @@ path.alt {
 .banner button svg {
     width: 16px;
     height: 16px;
+    fill: var(--color2light);
 }
 
 .banner.closed {
@@ -588,7 +588,7 @@ path.alt {
         cursor: var(--pointer), pointer;
     }
 
-    .headerButtons button:hover img {
+    .header > div:last-child button:hover img {
         filter: drop-shadow(1px 3px 1px var(--shadow)) brightness(75%);
     }
 
@@ -611,7 +611,7 @@ path.alt {
     padding: 0;
 }
 
-.fullscreen .welcome {
+.fullscreen .header {
     border-radius: 0;
     border-top: none;
     border-left: none;
@@ -644,7 +644,7 @@ path.alt {
         height: 100%;
     }
 
-    .welcome {
+    .header {
         border-radius: 0;
         border-top: none;
         border-left: none;
@@ -653,7 +653,7 @@ path.alt {
         align-items: center;
     }
 
-    .welcome h1 {
+    .header h1 {
         font-size: 17pt;
         margin-top: 0;
     }
@@ -754,15 +754,15 @@ path.alt {
         display: none;
     }
 
-    .headerButtons {
+    .header > div:last-child {
         width: 90px;
     }
 
-    .headerTime {
+    .header > div:first-child {
         width: 90px;
     }
 
-    .headerButtons img {
+    .header > div:last-child img {
         width: 16px;
     }
 }
