@@ -24,12 +24,86 @@
     user-select: none;
 }
 
+.projectSect > div:first-child > div{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px 10px;
+    width: 66px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 2px;
+    font-size: 0pt;
+    text-align: left;
+    filter: drop-shadow(1px 3px 1px var(--shadow));
+}
+
+.projectSect > div:first-child > div > div {
+    background-color: white;
+    width: 10px;
+    height: 100%;
+    display: inline-block;
+    margin: 0px 1px;
+}
+
+.projectSect > div:first-child > div > div:first-child {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    margin-left: 0px;
+}
+
+.projectSect > div:first-child > div > div:nth-child(5) {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    margin-right: 0px;
+}
+
 .projectSect:nth-of-type(even) > div:first-child {
     background-color: var(--color2dark);
 }
 
 .projectSect > div:nth-child(2) {
     height: calc(100% - var(--topHeight) - var(--bottomHeight));
+    display: flex;
+}
+
+.projectSect > div:nth-child(2) > div {
+    width: 100%;
+    overflow: auto;
+}
+
+.projectSect > div:nth-child(2) p {
+    text-align: center;
+    padding: 8px 20px;
+    position: relative;
+    min-height: 80px;
+}
+
+.projectSect > div:nth-child(2) a {
+    width: 140px;
+    height: 48px;
+    background-color: var(--altBackground);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0px 5px;
+    transition: 0.2s;
+    align-content: center;
+}
+
+.projectSect > div:nth-child(2) a svg {
+    width: 30px;
+    height: 30px;
+}
+
+.projectSect > div:nth-child(2) img{
+    height:100%;
+    width: 50%;
+    max-width: 300px;
+    margin: 0;
+    border-right: 1px solid var(--border);
+    object-fit:cover;
 }
 
 .projectSect > div:last-child {
@@ -70,16 +144,14 @@
     border-color: var(--color2);
 }
 
-.projectSect > div:last-child > div:nth-child(even) {
-    border-color: var(--color2);
-}
-
-.projectSect:nth-of-type(even) > div:last-child > div:nth-child(even) {
-    border-color: var(--color1);
-}
-
 .projectSect > div:last-child img {
     width: 15px;
     margin-right: 8px;
     vertical-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .projectSect > div:nth-child(2) a:hover {
+        background-color: var(--backgroundHover);
+    }
 }
