@@ -24,41 +24,6 @@
     user-select: none;
 }
 
-.projectSect > div:first-child > div{
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 5px 10px;
-    width: 66px;
-    height: 20px;
-    border: 2px solid white;
-    border-radius: 100px;
-    padding: 2px;
-    font-size: 0pt;
-    text-align: left;
-    filter: drop-shadow(1px 3px 1px var(--shadow));
-}
-
-.projectSect > div:first-child > div > div {
-    background-color: white;
-    width: 10px;
-    height: 100%;
-    display: inline-block;
-    margin: 0px 1px;
-}
-
-.projectSect > div:first-child > div > div:first-child {
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    margin-left: 0px;
-}
-
-.projectSect > div:first-child > div > div:nth-child(5) {
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    margin-right: 0px;
-}
-
 .projectSect:nth-of-type(even) > div:first-child {
     background-color: var(--color2dark);
 }
@@ -68,12 +33,16 @@
     display: flex;
 }
 
+.projectSect:nth-of-type(even) > div:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
 .projectSect > div:nth-child(2) > div {
     width: 100%;
     overflow: auto;
 }
 
-.projectSect > div:nth-child(2) p {
+.projectSect > div:nth-child(2) > div > p {
     text-align: center;
     padding: 8px 20px;
     position: relative;
@@ -90,11 +59,40 @@
     margin: 0px 5px;
     transition: 0.2s;
     align-content: center;
+    vertical-align: top;
+    padding: 0px 4px;
+    color:var(--text);
+    text-decoration: none;
+}
+
+.projectSect > div:nth-child(2) a > div {
+    width: 40px;
+    height: 100%;
+    align-content: center;
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
 }
 
 .projectSect > div:nth-child(2) a svg {
     width: 30px;
     height: 30px;
+    transition: 0.2s;
+    vertical-align: center;
+}
+
+.projectSect:nth-of-type(even) > div:nth-child(2) a svg {
+    fill: var(--color2light);
+}
+
+.projectSect > div:nth-child(2) a > p {
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    align-content: center;
 }
 
 .projectSect > div:nth-child(2) img{
@@ -104,6 +102,12 @@
     margin: 0;
     border-right: 1px solid var(--border);
     object-fit:cover;
+    user-select: none;
+}
+
+.projectSect:nth-of-type(even) > div:nth-child(2) img {
+    border-right: none;
+    border-left: 1px solid var(--border);
 }
 
 .projectSect > div:last-child {
@@ -118,30 +122,19 @@
 }
 
 .projectSect > div:last-child > div {
-    --color1: var(--color1dark);
-    --color2: var(--color2dark);
     width: fit-content;
     min-width: 100px;
     height: 24px;
     background-color: var(--altBackground);
     display: inline-block;
     border-radius: 100px;
-    border: 1px solid var(--color1);
+    border: 1px solid var(--border);
     align-content: center;
     overflow: hidden;
     padding: 0px 10px;
     vertical-align: center;
     user-select: none;
     margin: 0px 3px;
-}
-
-.light .projectSect > div:last-child > div {
-    --color1: var(--color1light);
-    --color2: var(--color2light);
-}
-
-.projectSect:nth-of-type(even) > div:last-child > div {
-    border-color: var(--color2);
 }
 
 .projectSect > div:last-child img {
@@ -153,5 +146,11 @@
 @media (hover: hover) and (pointer: fine) {
     .projectSect > div:nth-child(2) a:hover {
         background-color: var(--backgroundHover);
+        filter: drop-shadow(0 0 3px var(--border));
+    }
+
+    .projectSect > div:nth-child(2) a:hover svg {
+        width: 36px;
+        height: 36px;
     }
 }
