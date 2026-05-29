@@ -61,7 +61,7 @@
     align-content: center;
     vertical-align: top;
     padding: 0px 4px;
-    color:var(--text);
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -95,13 +95,13 @@
     align-content: center;
 }
 
-.projectSect > div:nth-child(2) img{
-    height:100%;
+.projectSect > div:nth-child(2) img {
+    height: 100%;
     width: 50%;
     max-width: 300px;
     margin: 0;
     border-right: 1px solid var(--border);
-    object-fit:cover;
+    object-fit: cover;
     user-select: none;
 }
 
