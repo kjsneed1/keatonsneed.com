@@ -1,0 +1,106 @@
+.bigLink {
+    display: inline-block;
+    width: 240px;
+    transition: 0.2s;
+    vertical-align: top;
+    margin: 10px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.bigLink  > div:first-child{
+    background-color: var(--color1dark);
+    height: 24px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    text-shadow: 1px 3px 1.5px var(--shadow);
+    font-size: 14pt;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.bigLink:nth-of-type(even) > div:first-child{
+    background-color: var(--color2dark);
+}
+
+.bigLink > div:last-child {
+    background-color: var(--altBackground);
+    height: 80px;
+    transition: 0.2s;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    margin: 0;
+}
+
+.bigLink > div:last-child > div:last-child {
+    display: inline-block;
+    padding: 5px;
+    overflow: auto;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.bigLink > div:last-child > div:first-child {
+    width: 80px;
+    background-color: var(--background);
+    border-bottom-left-radius: 8px;
+    border-right: 1px solid var(--border);
+    transition: 0.2s;
+    flex: none;
+    padding: 5px;
+    align-content: center;
+}
+
+.bigLink svg {
+    width: 45px;
+    margin: 0;
+    transition: 0.2s;
+    fill: var(--color1light)
+}
+
+.bigLink:nth-of-type(even) svg{
+    fill: var(--color2light)
+}
+
+@media (hover: hover) and (pointer:fine) {
+    .bigLink:hover {
+        filter: drop-shadow(0 0 3px var(--border));
+        cursor: var(--pointer), pointer;
+    }
+
+    .bigLink:hover > div:first-child {
+        background-color: var(--color1light);
+    }
+
+    .bigLink:hover:nth-of-type(even) > div:first-child {
+        background-color: var(--color2light);
+    }
+
+    .bigLink:hover > div:last-child {
+        background-color: var(--backgroundHover);
+    }
+
+    .bigLink:hover > div:last-child > div:first-child {
+        background-color: var(--altBackground);
+    }
+
+    .bigLink:hover svg {
+        width: 55px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .bigLink {
+        display: block;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}

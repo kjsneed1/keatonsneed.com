@@ -1,0 +1,78 @@
+.mediumLink {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin: 20px;
+    transition: 0.2s;
+    text-decoration: none;
+    user-select: none;
+}
+
+.mediumLink div:first-child {
+    height: 140px;
+    width: 140px;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: 0.2s;
+    align-content: center;
+}
+
+.mediumLink img {
+    vertical-align: center;
+    width: 120px;
+    transition: 0.2s;
+}
+
+.mediumLink div:last-child {
+    background-color: var(--color1dark);
+    color: white;
+    border: solid 1px var(--border);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 24px;
+    align-content: center;
+    text-shadow: 1px 3px 1.5px var(--shadow);
+    font-size: 14pt;
+    transition: 0.2s;
+}
+
+.mediumLink:nth-child(even) div:last-child {
+    background-color: var(--color2dark);
+}
+
+.mediumLinkContainer {
+    display: inline-block;
+    width: fit-content;
+}
+
+@media (hover: hover) and (pointer:fine) {
+    .mediumLink:hover {
+        filter: drop-shadow(0 0 3px var(--border));
+        cursor: var(--pointer), pointer;
+    }
+
+    .mediumLink:hover div:first-child {
+        background-color: var(--altBackground);
+    }
+
+    .mediumLink:hover div:last-child {
+        background-color: var(--color1light);
+    }
+
+    .mediumLink:nth-child(even):hover div:last-child {
+        background-color: var(--color2light);
+    }
+
+    .mediumLink:hover img {
+        width: 140px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mediumLink {
+        margin: 10px;
+    }
+}

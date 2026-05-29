@@ -1,25 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Home</title>
-    </head>
-    <body>
-        <nav>
-            <h2 class="myName">Keaton Sneed</h2>
-            <a href="index.html" style="text-decoration:underline #ADE1E5;">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="history.html">Work History</a>
-            <a href="contact.html">Find Me</a>
-        </nav>
-        <div class="welcome">
-            <h1>Welcome.</h1>
-            <h2>Thanks for visiting my website. It's good to see you.</h2>
+<script src="/layout/layout.js"></script>
+<script
+    type="module"
+    src="/components/bigLink/bigLink.js"
+    class="important"></script>
+
+<script class="important">
+    pageTitle = "Home";
+</script>
+
+<div class="important">
+    <h1>Welcome to my website!</h1>
+    <p>
+        This site is intended to serve as a digital portfolio, art project, and
+        hobby for me. Basically, a way to show off things that I make and do,
+        while still having it feel like my own little corner of the internet. I
+        hope you enjoy looking around!
+    </p>
+
+    <a class="bigLink" href="/about/">
+        <div>About</div>
+        <div>
+            <div>
+                <svg viewBox="0 0 512 512">
+                    <use href="/icons/about.svg#about-icon" />
+                </svg>
+            </div>
+            <div>Who am I?</div>
+        </div></a
+    ><a class="bigLink" href="/findMe/">
+        <div>Find Me</div>
+        <div>
+            <div>
+                <svg viewBox="0 0 512 512">
+                    <use href="/icons/loupe.svg#loupe-icon" />
+                </svg>
+            </div>
+            <div>Links to my socials and contact points.</div>
+        </div></a
+    ><a class="bigLink" href="/work/">
+        <div>Work History</div>
+        <div>
+            <div>
+                <svg viewBox="0 0 512 512">
+                    <use href="/icons/id-card.svg#id-card-icon" />
+                </svg>
+            </div>
+            <div>A look back at my work experience.</div>
         </div>
-        <div class ="intro">
-            <img src="./icons/magnifyingGlass.svg">
-            <h2>Who am I?</h2>            
+    </a><a class="bigLink" href="/projects/">
+        <div>Projects</div>
+        <div>
+            <div>
+                <svg viewBox="0 0 512 512">
+                    <use href="/icons/layers.svg#layers-icon" />
+                </svg>
+            </div>
+            <div>A glance at what I've worked on.</div>
         </div>
-    </body>
-</html>
+    </a>
+</div>

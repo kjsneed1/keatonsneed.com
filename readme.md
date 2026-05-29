@@ -1,6 +1,5 @@
-Project: Online Portfolio
-Author: Keaton Sneed
-Wireframe Link: https://www.figma.com/design/O9j0I9L6ogimQGlzyiTKOj/Keaton-Sneed-CIS130---Online-Profile-Outline?node-id=0-1&t=5rnCMVuWbA2tSEdU-1
-GitHub Link: https://github.com/kjsneed1/kjsneed1.github.io
+# keatonsneed.com
 
-LIVE SITE LINK: https://kjsneed1.github.io/
+This project is my personal website. I use it as both a personal portfolio and a way to show off things I do!
+
+**See live site [here](https://keatonsneed.com/)**.

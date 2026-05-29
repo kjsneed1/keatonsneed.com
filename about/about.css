@@ -1,0 +1,170 @@
+.aboutSplitter{
+  display: flex;
+}
+
+.aboutContent{
+  margin-left: 20px;
+  width: 100%;
+}
+
+.headShot{
+  width: 240px;
+  flex: none;
+  margin: auto;
+}
+
+.headShot div{
+  width: 100%;
+  height: 10px;
+  background-image: linear-gradient(
+        to right,
+        var(--color1dark),
+        var(--color2dark)
+    );
+  margin: 0; 
+  border: 1px solid var(--border);
+}
+
+.headShot div:first-child{
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.headShot div:last-child{
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.headShot img{
+  width: 100%;
+  vertical-align: top;
+  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+h2{
+  text-decoration: underline var(--color2dark);
+  font-weight: lighter;
+}
+
+.favCard{
+  width: 300px;
+  height: fit-content;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: auto;
+  max-width: 100%;
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+}
+
+.favCard div:first-child{
+  background-color: var(--color1dark);
+  color: white;
+  height: 24px;
+  font-size: 14pt;
+  text-shadow: 1px 3px 1.5px var(--shadow);
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+
+.favCard:nth-of-type(odd) div:first-child{
+  background-color: var(--color2dark);
+}
+
+.favCard div:last-child{
+  padding: 8px;
+  background-color: var(--background);
+  height: 376px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  position: relative;
+}
+
+.favCard a{
+  color: var(--color1light);
+  transition: 0.2s;
+}
+
+.favCard:nth-of-type(odd) a{
+  color: var(--color2light);
+}
+
+.light .favCard a{
+  color: var(--color1dark);
+}
+
+.light .favCard:nth-of-type(odd) a{
+  color: var(--color2dark);
+}
+
+
+ul{
+  list-style-position: inside;
+  margin-top: -10px;
+  padding-left: 0;
+}
+
+ol{
+  list-style-position: inside;
+  margin-top: -10px;
+  padding-left: 0;
+}
+
+.favCard svg{
+  position: absolute;
+  background-color: var(--altBackground);
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  left: 0;
+  bottom: 0;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 8px;
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  fill: var(--color1light);
+}
+
+.favCard:nth-of-type(odd) svg{
+  fill:var(--color2light);
+}
+
+@media (hover: hover) and (pointer:fine) {
+  .favCard a:hover{
+    color: var(--color1dark);
+  }
+
+  .favCard:nth-of-type(odd) a:hover{
+    color: var(--color2dark);
+  }
+
+  .light .favCard a:hover{
+    color: var(--color1light);
+  }
+
+  .light .favCard:nth-of-type(odd) a:hover{
+    color: var(--color2light);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutSplitter{
+    flex-direction: column;
+  }
+
+  .aboutContent{
+    margin: auto;
+  }
+
+  .headShot{
+    width: 180px;
+  }
+
+  .favCard{
+    width: 90%;
+  }
+}

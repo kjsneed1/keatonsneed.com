@@ -1,0 +1,768 @@
+@import url("/layout/colors.css");
+
+@font-face {
+  font-family: pGothicInternal;
+  src: url(/fonts/ms-pgothic-regular.ttf);
+}
+
+@keyframes myAnimation {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: 240px 240px;
+    }
+}
+
+@keyframes hoverLink {
+    0% {
+        margin-left: 0px;
+    }
+
+    50% {
+        margin-left: 5px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes navClose {
+    from {
+        position: relative;
+    }
+    to {
+        position: absolute;
+    }
+}
+
+@keyframes bannerSlide {
+    from {
+        margin-left: -400px;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--color1dark);
+    color: white;
+}
+
+body {
+    background-image: url("/images/BackImage.png");
+    animation: myAnimation 16s linear infinite;
+    height: 100vh;
+    margin: 0px;
+    align-content: center;
+    font-family:
+        "MS PGothic", pGothicInternal , "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
+        Sans-serif;
+    font-size: 13pt;
+    color: var(--text);
+    cursor: var(--cursor), auto;
+    overflow: auto;
+}
+
+body.dark {
+    background-image: url("/images/BackImage.png");
+}
+
+body.light {
+    background-image: url("/images/BackImageLight.png");
+}
+
+svg {
+    fill: var(--color1light);
+}
+
+svg.alt {
+    fill: var(--color2light);
+}
+
+path.alt {
+    fill: var(--color2light);
+}
+
+.center {
+    max-width: 1280px;
+    margin: auto;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 860px;
+    filter: drop-shadow(0 0 15px var(--shadow));
+    transition: 0.5s;
+}
+
+.myflex {
+    display: flex;
+    flex: auto;
+    height: 200px;
+}
+
+/*Navigation*/
+
+.nav {
+    border: solid 1px var(--border);
+    background-color: var(--altBackground);
+    width: 166px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: none;
+    height: 100%;
+    transition:
+        width 0.5s,
+        height 0s;
+}
+
+.nav a {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: 0.2s;
+    background-color: transparent;
+    padding: 5px;
+    margin: 5px;
+    user-select: none;
+    width: 154px;
+    height: 40px;
+}
+
+.nav a div {
+    display: inline-block;
+    align-content: top;
+    height: 16px;
+    padding: 0;
+    vertical-align: top;
+    transition: height 0.2s;
+    margin-top: 2px;
+}
+
+.nav a svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: center;
+    transition: 0.2s;
+    margin-top: 2px;
+}
+
+.nav a:nth-child(odd) svg {
+    fill: var(--color2light);
+}
+
+.nav a object {
+    width: 16px;
+}
+
+.nav a div p {
+    margin: 0;
+    margin-top: -5;
+}
+
+.nav a:active {
+    filter: none;
+    border: 1px solid transparent;
+}
+
+.navContainer {
+    position: relative;
+    z-index: 2;
+}
+
+.navToggleButton {
+    position: absolute;
+    left: 100%;
+    width: 40px;
+    height: 40px;
+    top: 1px;
+    z-index: 2;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-left: none;
+    background-color: var(--background);
+    border-bottom-right-radius: 10px;
+    display: none;
+    transition: 0.2s;
+}
+
+.navToggleButton svg {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.nav a.selected{
+  background-color: var(--backgroundHover);
+  border: 1px solid var(--border);
+}
+
+.nav a.selected div{
+    height: 22px;
+}
+
+.nav a.selected svg{
+  width: 22px;
+  height: 22px;
+}
+
+.header {
+    color: white;
+    background-image: linear-gradient(
+        to right,
+        var(--color1dark),
+        var(--color2dark)
+    );
+    height: 32px;
+    border: solid 1px var(--border);
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    flex: none;
+    align-content: center;
+    z-index: 3;
+    display: flex;
+    text-shadow: 1px 3px 1.5px var(--shadow);
+    transition: 0.5s;
+}
+
+.header h1 {
+    font-size: 16pt;
+    margin: 0;
+    margin-top: 3px;
+    font-weight: lighter;
+    user-select: none;
+    width: 100%;
+    vertical-align: top;
+}
+
+.header > div:first-child {
+    margin: 5px 5px;
+    width: 100px;
+    flex: none;
+}
+
+.header > div:last-child {
+    margin: 0px 5px;
+    width: 110px;
+    flex: none;
+    position: relative;
+    user-select: none;
+}
+
+.header > div:last-child button {
+    display: inline-block;
+    margin: 0px;
+    border: none;
+    background: none;
+    height: 100%;
+}
+
+.header > div:last-child img {
+    width: 14px;
+    filter: drop-shadow(1px 3px 1px var(--shadow));
+    vertical-align: top;
+    transition: 0.2s;
+    margin: 0px 3px;
+}
+
+@keyframes themeOpen {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes themeClose {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+.themePopup {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 36px;
+    filter: drop-shadow(0 0 10px var(--shadow));
+    animation: themeClose 0.15s linear forwards;
+    visibility: hidden;
+    transition: visibility 0s;
+    transition-delay: 0.15s;
+    user-select: none;
+}
+
+.themePopup.visible {
+    visibility: visible;
+    transition-delay: 0s;
+    animation: themeOpen 0.15s linear forwards;
+}
+
+.themeArrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--color1dark);
+    transform: translate(-50%, 2px);
+}
+
+.themeArrowOutline {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid var(--border);
+    margin: auto;
+    z-index: 1;
+}
+
+.themeTop {
+    background-color: var(--color1dark);
+    width: 100px;
+    height: 10px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: -1;
+    transform: translate(0, -1px);
+    position: relative;
+}
+
+.themeBox {
+    width: 100px;
+    height: 100px;
+    background-color: var(--altBackground);
+    border: 1px solid var(--border);
+    transform: translate(0, -1px);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: center;
+    padding: 5px;
+}
+
+.themePuck {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(
+        45deg,
+        var(--color1dark) 40%,
+        var(--color2dark) 60%
+    );
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    display: inline-block;
+}
+
+.themeSlider {
+    margin: auto;
+    margin-top: 4px;
+    width: 60px;
+    height: 24px;
+    border: solid 1px var(--border);
+    border-radius: 100px;
+    background-color: var(--background);
+    z-index: -1;
+    position: relative;
+}
+
+.themeSliderPuck {
+    height: 100%;
+    width: 30px;
+    outline: solid 1px var(--border);
+    border-radius: 100px;
+    background-color: var(--backgroundHover);
+    transition: margin 0.5s;
+}
+
+.dark .themeSliderPuck {
+    margin-left: 0px;
+}
+
+.light .themeSliderPuck {
+    margin-left: 28px;
+}
+
+.themeSlider svg {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 4px;
+}
+
+.themeSlider .moon {
+    left: 8px;
+}
+
+.themeSlider .sun {
+    right: 8px;
+}
+
+.foot {
+    height: 10px;
+    background-image: linear-gradient(
+        to right,
+        var(--color1dark),
+        var(--color2dark)
+    );
+    border: solid 1px var(--border);
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    flex: none;
+    z-index: 3;
+}
+
+.main {
+    width: 100%;
+    border: solid 1px var(--border);
+    border-left: none;
+    max-height: 100%;
+    z-index: 1;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    background-color: var(--backgroundClear);
+    padding: 30px 20px;
+    height: 100%;
+    text-align: center;
+    overflow: auto;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .content {
+        scrollbar-color: var(--color2dark) var(--altBackground);
+        scrollbar-width: thin;
+    }
+}
+
+@supports selector(::-webkit-scrollbar) {
+    ::-webkit-scrollbar {
+        width: 5px;
+        margin-top: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+        margin: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color2dark);
+        border-radius: 100px;
+        border-right: 3px solid transparent;
+    }
+}
+
+.contentWidthForce {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.banner {
+    background-color: var(--background);
+    height: 24px;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    flex: none;
+    position: relative;
+    transition: 0.5s;
+}
+
+.banner > div{
+    min-width: fit-content;
+    display: inline-block;
+    overflow: hidden;
+    text-wrap: nowrap;
+    z-index: 1;
+    position: absolute;
+    margin-left: -400px;
+    margin-top: 3px;
+    animation: bannerSlide 15s linear infinite;
+}
+
+.banner > div:last-of-type {
+    animation-delay: 7.5s;
+}
+
+
+.banner b {
+    color: var(--color1light);
+}
+
+
+.banner > div:last-of-type b {
+    color: var(--color2light);
+}
+
+.banner button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-left: 1px solid var(--border);
+    background-color: var(--altBackground);
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    opacity: 0%;
+    transition: 0.2s;
+    padding: 0px;
+}
+
+.banner button svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--color2light);
+}
+
+.banner.closed {
+    border: none;
+    height: 0;
+}
+
+.content h1 {
+    text-decoration: underline var(--color2dark);
+    font-weight: lighter;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        cursor: var(--pointer), pointer;
+    }
+
+    button:hover {
+        cursor: var(--pointer), pointer;
+    }
+
+    .nav a:hover {
+        border: solid 1px var(--border);
+        transition: 0.2s;
+        background-color: var(--backgroundHover);
+        filter: drop-shadow(0 0 3px var(--border));
+        cursor: var(--pointer), pointer;
+    }
+
+    .nav a:hover svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nav a:hover div {
+        animation: hoverLink 1.2s infinite;
+        height: 22px;
+    }
+
+    .navToggleButton:hover {
+        background-color: var(--backgroundHover);
+    }
+
+    .themePuck:hover {
+        background-image: linear-gradient(
+            45deg,
+            var(--color1light) 40%,
+            var(--color2light) 60%
+        );
+        cursor: var(--pointer), pointer;
+    }
+
+    .header > div:last-child button:hover img {
+        filter: drop-shadow(1px 3px 1px var(--shadow)) brightness(75%);
+    }
+
+    .banner:hover button {
+        opacity: 100%;
+    }
+
+    .banner button:hover {
+        background-color: var(--backgroundHover);
+    }
+
+    .themeSlider:hover {
+        cursor: var(--pointer), pointer;
+    }
+}
+
+.center.fullscreen {
+    max-width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.fullscreen .header {
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.fullscreen .foot {
+    display: none;
+}
+
+.fullscreen .nav {
+    border-left: none;
+    border-bottom: none;
+    height: calc(100vh - 32px);
+    transition:
+        width 0.5s,
+        height 0s;
+    transition-delay: 0s, 0.5s;
+}
+
+.fullscreen .main {
+    border-right: none;
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .center {
+        max-width: 100%;
+        padding: 0px;
+        height: 100%;
+    }
+
+    .header {
+        border-radius: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        height: 40px;
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 17pt;
+        margin-top: 0;
+    }
+
+    .nav {
+        width: 0px;
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+        z-index: 2;
+        height: calc(100vh - 40px);
+        transition-delay: 0s, 0.5s;
+        filter: drop-shadow(0 0 10px var(--shadow));
+    }
+
+    .fullscreen .nav {
+        height: calc(100vh - 40px);
+    }
+
+    .navContainer {
+        animation: navClose 0s linear forwards;
+        animation-delay: 0.5s;
+    }
+
+    .themePopup {
+        transform: translate(-80px, 0%);
+    }
+
+    .themeArrowOutline {
+        transform: translate(38px, 0);
+    }
+
+    .themeTop {
+        width: 120px;
+    }
+
+    .themeBox {
+        width: 120px;
+        height: 120px;
+    }
+
+    .themePuck {
+        width: 28px;
+        height: 28px;
+    }
+
+    .themeSlider {
+        width: 80px;
+        height: 30px;
+    }
+
+    .themeSliderPuck {
+        width: 40px;
+    }
+
+    .light .themeSliderPuck {
+        margin-left: 38px;
+    }
+
+    .themeSlider svg {
+        width: 18px;
+        height: 18px;
+        margin: 1px 2px;
+    }
+
+    .navToggleButton {
+        display: inline;
+    }
+
+    .main{
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .myflex {
+        border-bottom: none;
+    }
+
+    .content {
+        padding: 45px 10px;
+    }
+
+    .foot {
+        display: none;
+    }
+
+    @supports selector(::-webkit-scrollbar) {
+        .content::-webkit-scrollbar {
+            width: 3px;
+        }
+    }
+
+    .banner button {
+        opacity: 100%;
+    }
+
+    #fullscreenButton {
+        display: none;
+    }
+
+    .header > div:last-child {
+        width: 90px;
+    }
+
+    .header > div:first-child {
+        width: 90px;
+    }
+
+    .header > div:last-child img {
+        width: 16px;
+    }
+}

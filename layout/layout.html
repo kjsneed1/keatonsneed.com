@@ -1,0 +1,135 @@
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+<script>
+    let pageTitle = "Default Title";
+</script>
+
+<head>
+    <title id="pageTitle">{pageTitle}</title>
+</head>
+
+<body id="body">
+    <audio src="/music/silence.mp3" autoplay loop></audio>
+    <div class="center">
+        <div class="header">
+            <div></div>
+            <h1 id="headerTitle">{headerTitle}</h1>
+            <div>
+                <button onclick="handleMute()">
+                    <img id="muteIcon" src="/icons/volume.svg" />
+                </button>
+                <button onclick="handleThemeOpen()">
+                    <img src="/icons/fill.svg" />
+                </button>
+                <button id="fullscreenButton" onclick="handleFullscreen()">
+                    <img id="fullscreenIcon" src="/icons/expand.svg" />
+                </button>
+                <div class="themePopup">
+                    <div class="themeArrowOutline">
+                        <div class="themeArrow"></div>
+                    </div>
+                    <div class="themeTop"></div>
+                    <div class="themeBox">
+                        <div
+                            onclick="setTheme('theme1')"
+                            class="themePuck theme1"></div>
+                        <div
+                            onclick="setTheme('theme2')"
+                            class="themePuck theme2"></div>
+                        <div
+                            onclick="setTheme('theme3')"
+                            class="themePuck theme3"></div>
+                        <div
+                            onclick="setTheme('theme4')"
+                            class="themePuck theme4"></div>
+                        <div
+                            onclick="setTheme('theme5')"
+                            class="themePuck theme5"></div>
+                        <div
+                            onclick="setTheme('theme6')"
+                            class="themePuck theme6"></div>
+                        <div class="themeSlider" onclick="toggleTheme()">
+                            <div class="themeSliderPuck"></div>
+                            <svg class="moon">
+                                <use href="/icons/moon.svg#moon-icon" />
+                            </svg>
+                            <svg class="sun alt">
+                                <use href="/icons/sun.svg#sun-icon" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="myflex" onclick="hideThemePopup()">
+            <div class="navContainer">
+                <button class="navToggleButton" onclick="navToggle()">
+                    <svg viewBox="0 0 512 512">
+                        <path
+                            d="M0,0 L462,0 L472,4 L480,11 L485,18 L487,24 L487,40 L483,50 L476,58 L467,63 L460,65 L2,65 L-8,62 L-17,55 L-23,46 L-25,41 L-25,24 L-21,15 L-14,7 L-6,2 Z "
+                            transform="translate(25,373)" />
+                        <path
+                            d="M0,0 L458,0 L468,3 L477,10 L483,19 L485,25 L485,41 L481,50 L474,58 L466,63 L460,65 L-2,65 L-14,60 L-22,52 L-26,44 L-27,41 L-27,24 L-21,12 L-13,5 L-4,1 Z "
+                            transform="translate(27,74)" />
+                        <path
+                            class="alt"
+                            d="M0,0 L464,0 L474,4 L481,10 L486,18 L488,24 L488,40 L484,50 L478,57 L470,62 L464,64 L0,64 L-10,60 L-17,54 L-22,46 L-24,40 L-24,24 L-20,14 L-14,7 L-6,2 Z "
+                            transform="translate(24,224)" />
+                    </svg>
+                </button>
+                <div class="nav">
+                    <a id="home" href="/"
+                        ><svg>
+                            <use href="/icons/home.svg#home-icon" />
+                        </svg>
+                        <div>
+                            <p>Home</p>
+                        </div>
+                    </a>
+                    <a id="about" href="/about/"
+                        ><svg><use href="/icons/about.svg#about-icon" /></svg>
+                        <div>About</div>
+                    </a>
+                    <a id="findMe" href="/findMe/"
+                        ><svg>
+                            <use href="/icons/loupe.svg#loupe-icon" />
+                        </svg>
+                        <div>Find Me</div>
+                    </a>
+                    <a id="work" href="/work/"
+                        ><svg>
+                            <use href="/icons/id-card.svg#id-card-icon" />
+                        </svg>
+
+                        <div>Work History</div>
+                    </a>
+                    <a id="projects" href="/projects/"
+                        ><svg>
+                            <use href="/icons/layers.svg#layers-icon" />
+                        </svg>
+
+                        <div>Projects</div>
+                    </a>
+                </div>
+            </div>
+            <div class="main" onclick="clickOffNav()">
+                <div class="banner">
+                    <div class="bannerMessage1">
+                        <b>Hello!</b> Thanks for dropping by!
+                    </div>
+                    <div class="bannerMessage2">
+                        <b>UPDATE!</b> New look! New me?
+                    </div>
+                    <button onclick="closeBanner()">
+                        <svg>
+                            <use
+                                href="/icons/cross-small.svg#cross-small-icon" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="content"><div class="contentWidthForce"></div></div>
+            </div>
+        </div>
+        <div class="foot"></div>
+    </div>
+</body>
