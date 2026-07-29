@@ -235,6 +235,41 @@ const closeBanner = function () {
     banner.classList.add("closed");
 };
 
+const playMusic = function () {
+    musicPlayer.play();
+    playPauseIcon.attributes.href.value = "/icons/pause.svg#pause-icon";
+};
+
+const pauseMusic = function () {
+    musicPlayer.pause();
+    playPauseIcon.attributes.href.value = "/icons/play.svg#play-icon";
+};
+
+const playPauseMusic = function () {
+    if (musicPlayer.paused) {
+        playMusic();
+    } else {
+        pauseMusic();
+    }
+};
+
+const setMusicPlayer = function (album, song) {
+    musicPlayer.src = `/music/${album}/${song}.mp3`;
+
+    const songTitle = document.getElementById("musicTitles").querySelector("b");
+    const albumTitle = document
+        .getElementById("musicTitles")
+        .querySelector("p");
+
+    songTitle.textContent = song;
+    albumTitle.textContent = album;
+
+    const albumImage = document.getElementById("musicBar").querySelector("img");
+    albumImage.src = `/images/albumCovers/${album}.png`;
+
+    playMusic();
+};
+
 let bannerString = "";
 
 void (async function () {
@@ -298,4 +333,7 @@ void (async function () {
     if (localStorage.getItem("bannerClosed") === bannerString) {
         closeBanner();
     }
+
+    const musicPlayer = document.getElementById("musicPlayer");
+    const playPauseIcon = document.getElementById("playPauseIcon");
 })();

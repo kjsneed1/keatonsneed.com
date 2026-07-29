@@ -110,6 +110,13 @@
 
                         <div>Projects</div>
                     </a>
+                    <a id="myMusic" href="/myMusic/"
+                        ><svg>
+                            <use href="/icons/music.svg#music-icon" />
+                        </svg>
+
+                        <div>Music</div>
+                    </a>
                 </div>
             </div>
             <div class="main" onclick="clickOffNav()">
@@ -128,6 +135,35 @@
                     </button>
                 </div>
                 <div class="content"><div class="contentWidthForce"></div></div>
+                <div id="musicBar">
+                    <audio id="musicPlayer" src="/music/Orbit.mp3"></audio>
+                    <img src="/images/albumCovers/Skyline.png" />
+                    <div id="musicTitles">
+                        <b>Song Name</b>
+                        <p>Song Album</p>
+                    </div>
+                    <div id="musicControls">
+                        <button id="musicBackButton" onclick="playPauseMusic()">
+                            <svg>
+                                <use href="/icons/rewind.svg#rewind-icon" />
+                            </svg>
+                        </button>
+                        <button id="playPauseButton" onclick="playPauseMusic()">
+                            <svg>
+                                <use
+                                    id="playPauseIcon"
+                                    href="/icons/play.svg#play-icon" />
+                            </svg>
+                        </button>
+                        <button
+                            id="musicForwardButton"
+                            onclick="playPauseMusic()">
+                            <svg>
+                                <use href="/icons/forward.svg#forward-icon" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="foot"></div>

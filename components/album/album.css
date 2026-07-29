@@ -1,0 +1,120 @@
+.album {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.album > div:first-child {
+    height: 10px;
+    background-color: var(--color1dark);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 1px solid var(--border);
+}
+
+.album > div:nth-child(2) {
+    height: 360px;
+    background-color: var(--altBackground);
+    display: flex;
+}
+
+.album > div:last-child {
+    height: 10px;
+    background-color: var(--color1dark);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top: 1px solid var(--border);
+}
+
+.album img {
+    width: 360px;
+    flex: none;
+    border-right: 1px solid var(--border);
+}
+
+.album > div:nth-child(2) > div {
+    width: 100%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.album > div:nth-child(2) > div > div:first-child {
+    background-color: var(--altBackground);
+    width: 100%;
+    margin-top: 0px;
+    border-bottom: 1px solid var(--border);
+    height: 80px;
+    overflow: hidden;
+    flex: none;
+}
+
+.album > div:nth-child(2) > div > div:first-child h1 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: left;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.album > div:nth-child(2) > div > div:first-child h2 {
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 24px;
+    font-weight: normal;
+    font-size: 16pt;
+    color: var(--color1light);
+}
+
+.album > div:nth-child(2) > div > div:last-child {
+    height: 100%;
+    overflow: auto;
+}
+
+.album ol {
+    margin: 0px;
+    list-style-type: none;
+}
+
+.album ol > li {
+    border-bottom: 1px solid var(--border);
+    height: 40px;
+    align-content: center;
+    counter-increment: customlistcounter;
+    margin-left: -40px;
+    transition: 0.2s;
+    background-color: var(--background);
+}
+
+.album ol > li > div {
+    display: flex;
+}
+
+.album ol > li > div p {
+    margin: 0px;
+    width: 60px;
+    flex: none;
+}
+
+.album ol > li > div b {
+    width: 100%;
+}
+
+.album ol > li:before {
+    content: counter(customlistcounter) "";
+    float: left;
+    width: 3em;
+}
+
+.album ol:first-child {
+    counter-reset: customlistcounter;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .album ol > li:hover {
+        background-color: var(--backgroundHover);
+        cursor: var(--pointer), pointer;
+    }
+}

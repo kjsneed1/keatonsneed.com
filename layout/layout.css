@@ -1,8 +1,8 @@
 @import url("/layout/colors.css");
 
 @font-face {
-  font-family: pGothicInternal;
-  src: url(/fonts/ms-pgothic-regular.ttf);
+    font-family: pGothicInternal;
+    src: url(/fonts/ms-pgothic-regular.ttf);
 }
 
 @keyframes myAnimation {
@@ -63,8 +63,8 @@ body {
     margin: 0px;
     align-content: center;
     font-family:
-        "MS PGothic", pGothicInternal , "MS Gothic", "Gothic A1", "IPAGothic", "terminus",
-        Sans-serif;
+        "MS PGothic", pGothicInternal, "MS Gothic", "Gothic A1", "IPAGothic",
+        "terminus", Sans-serif;
     font-size: 13pt;
     color: var(--text);
     cursor: var(--cursor), auto;
@@ -203,18 +203,18 @@ path.alt {
     transition: 0.2s;
 }
 
-.nav a.selected{
-  background-color: var(--backgroundHover);
-  border: 1px solid var(--border);
+.nav a.selected {
+    background-color: var(--backgroundHover);
+    border: 1px solid var(--border);
 }
 
-.nav a.selected div{
+.nav a.selected div {
     height: 22px;
 }
 
-.nav a.selected svg{
-  width: 22px;
-  height: 22px;
+.nav a.selected svg {
+    width: 22px;
+    height: 22px;
 }
 
 .header {
@@ -451,6 +451,61 @@ path.alt {
     overflow: auto;
 }
 
+#musicBar {
+    height: 60px;
+    width: 100%;
+    background-color: var(--background);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    align-content: center;
+    display: flex;
+}
+
+#musicBar img {
+    width: 60px;
+    border-right: 1px solid var(--border);
+    flex: none;
+}
+
+#musicTitles {
+    width: 200px;
+    text-align: left;
+    padding: 5px;
+    border-right: 1px solid var(--border);
+}
+
+#musicTitles p {
+    margin: 0;
+    font-size: 10pt;
+    color: var(--border);
+}
+
+#musicControls {
+    text-align: center;
+    align-content: center;
+    width: 120px;
+    border-right: 1px solid var(--border);
+    flex: none;
+}
+
+#musicControls button {
+    height: fit-content;
+    width: fit-content;
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+#musicControls button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color2light);
+}
+
+#playPauseIcon {
+    fill: var(--color1light);
+}
+
 @supports not selector(::-webkit-scrollbar) {
     .content {
         scrollbar-color: var(--color2dark) var(--altBackground);
@@ -492,7 +547,7 @@ path.alt {
     transition: 0.5s;
 }
 
-.banner > div{
+.banner > div {
     min-width: fit-content;
     display: inline-block;
     overflow: hidden;
@@ -508,11 +563,9 @@ path.alt {
     animation-delay: 7.5s;
 }
 
-
 .banner b {
     color: var(--color1light);
 }
-
 
 .banner > div:last-of-type b {
     color: var(--color2light);
@@ -723,7 +776,7 @@ path.alt {
         display: inline;
     }
 
-    .main{
+    .main {
         border-right: none;
         border-bottom: none;
     }
