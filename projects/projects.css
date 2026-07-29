@@ -8,13 +8,13 @@
     --bottomHeight: 40px;
     margin-bottom: 40px;
 }
-@supports not selector(::-webkit-scrollbar) {
+@supports not selector(::-webkit-scrollbar-track) {
     .projectSect:nth-of-type(odd) {
         scrollbar-color: var(--color1dark) var(--altBackground);
     }
 }
 
-@supports selector(::-webkit-scrollbar) {
+@supports selector(::-webkit-scrollbar-track) {
     .projectSect:nth-of-type(odd) ::-webkit-scrollbar-thumb {
         background: var(--color1dark);
     }

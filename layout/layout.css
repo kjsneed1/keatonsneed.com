@@ -65,6 +65,8 @@ body {
     font-family:
         "MS PGothic", pGothicInternal, "MS Gothic", "Gothic A1", "IPAGothic",
         "terminus", Sans-serif;
+        "MS PGothic", pGothicInternal, "MS Gothic", "Gothic A1", "IPAGothic",
+        "terminus", Sans-serif;
     font-size: 13pt;
     color: var(--text);
     cursor: var(--cursor), auto;
@@ -506,14 +508,14 @@ path.alt {
     fill: var(--color1light);
 }
 
-@supports not selector(::-webkit-scrollbar) {
+@supports not selector(::-webkit-scrollbar-track) {
     .content {
         scrollbar-color: var(--color2dark) var(--altBackground);
         scrollbar-width: thin;
     }
 }
 
-@supports selector(::-webkit-scrollbar) {
+@supports selector(::-webkit-scrollbar-track) {
     ::-webkit-scrollbar {
         width: 5px;
         margin-top: 10px;
@@ -547,6 +549,7 @@ path.alt {
     transition: 0.5s;
 }
 
+.banner > div {
 .banner > div {
     min-width: fit-content;
     display: inline-block;
@@ -777,6 +780,7 @@ path.alt {
     }
 
     .main {
+    .main {
         border-right: none;
         border-bottom: none;
     }
@@ -791,12 +795,6 @@ path.alt {
 
     .foot {
         display: none;
-    }
-
-    @supports selector(::-webkit-scrollbar) {
-        .content::-webkit-scrollbar {
-            width: 3px;
-        }
     }
 
     .banner button {
