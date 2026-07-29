@@ -5,13 +5,13 @@
     border-radius: 8px;
 }
 
-@supports not selector(::-webkit-scrollbar) {
-    .section:nth-of-type(4n + 1){
+@supports not selector(::-webkit-scrollbar-track) {
+    .section:nth-of-type(4n + 1) {
         scrollbar-color: var(--color1dark) var(--altBackground);
     }
 }
 
-@supports selector(::-webkit-scrollbar) {
+@supports selector(::-webkit-scrollbar-track) {
     .section:nth-of-type(4n + 1) ::-webkit-scrollbar-thumb {
         background: var(--color1dark);
     }
